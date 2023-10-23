@@ -1,7 +1,7 @@
 import settings
 import discord
 import simplecommands
-import timezone
+import timeZone
 from discord.ext import commands
 
 logger = settings.logging.getLogger("bot")
@@ -14,7 +14,7 @@ def run():
     async def on_ready():
         logger.info(f"User: {bot.user} (ID: {bot.user.id})")
     simplecommands.setup(bot)
-    timezone.setup(bot)
+    timeZone.setup(bot)
     
 
     bot.run(settings.DISCORD_API_SECRET, root_logger=True)
