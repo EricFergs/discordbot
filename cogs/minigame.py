@@ -6,18 +6,10 @@ from cogs import moves
 import image_manipulation
 
 
-
-
-
-
-
 def player1(new_embed, value1,value2,player1,player2,line2 = ""):
     move1, damage1 = moves.select_move(player1)
-    #move2, damage2 = moves.select_move(player2)
-    #value1 = value1 - damage2
     value2 = value2 - damage1
     line1 = f":arrow_backward:{player1} uses __{move1}__ against {player2} for __{damage1}__"
-    #line2 = f":arrow_forward: {player2} uses __{move2}__ against {player1} for __{damage2}__"
     if value1 <= 0 or value2 <= 0:
         if value1 > value2:
             winner = player1
@@ -37,11 +29,8 @@ def player1(new_embed, value1,value2,player1,player2,line2 = ""):
     return new_embed, value1, value2, line1
 
 def player2(new_embed, value1,value2,player1,player2,line1):
-    #move1, damage1 = moves.select_move(player1)
     move2, damage2 = moves.select_move(player2)
     value1 = value1 - damage2
-    #value2 = value2 - damage1
-    #line1 = f":arrow_backward:{player1} uses __{move1}__ against {player2} for __{damage1}__"
     line2 = f":arrow_forward: {player2} uses __{move2}__ against {player1} for __{damage2}__"
     if value1 <= 0 or value2 <= 0:
         if value1 > value2:
@@ -73,9 +62,9 @@ class Minigame(commands.Cog):
     async def fight(self,ctx):
         author = ctx.author.display_name
         display_name = ctx.message.mentions[0].display_name
-        author_pfp = ctx.author.display_avatar
-        display_pfp = ctx.message.mentions[0].display_avatar
-        image_manipulation.fight_scene(author_pfp,display_pfp)
+        #author_pfp = ctx.author.display_avatar
+        #display_pfp = ctx.message.mentions[0].display_avatar
+        image_manipulation.fight_scene(author,display_name)
         embed = discord.Embed(
             colour=discord.Colour.dark_teal(),
             description=":boom: The battle has started!",
@@ -93,7 +82,7 @@ class Minigame(commands.Cog):
                 new_embed, value1, value2, line1 = player1(embed,value1,value2,author,display_name,line2)
             else:
                 new_embed, value1, value2, line2 = player2(embed,value1,value2,author,display_name,line1)
-            await asyncio.sleep(3)
+            await asyncio.sleep(2.5)
             await message.edit(embed=new_embed)
             i += 1
 

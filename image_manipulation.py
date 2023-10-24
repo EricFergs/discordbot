@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 from maps import matcher
+from cogs import moves
 import requests
 from io import BytesIO
 
@@ -53,9 +54,9 @@ def resize(img):
 
 def fight_scene(profile1, profile2):
   background = Image.open('misc/bg.png').convert('RGBA')
-  profile1 = resize(profile1)
-  profile2 = resize(profile2)
-  background.paste(profile2,(210,50))
+  profile1 = Image.open(moves.pfps[profile1]).convert('RGBA')
+  profile2 = Image.open(moves.pfps[profile2]).convert('RGBA')
+  background.paste(profile2,(200,50))
   background.paste(profile1,(-10,50))
   background.save('fight.png')
 
