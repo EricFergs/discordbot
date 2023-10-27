@@ -4,6 +4,7 @@ import stageinfo
 import image_manipulation
 import os
 import asyncio
+import cat
 from PIL import Image
 import pytesseract
 
@@ -53,3 +54,8 @@ def setup(bot):
         embed=discord.Embed(title="Turf rotation", description="This is an embed that will show how to build an embed and the different components", color=0x90EE90)
         embed.set_thumbnail(url='https://splatoon3.ink/assets/regular.64299513.svg')
         await ctx.send(embed=embed)
+    
+    @bot.command()
+    async def neko(ctx):
+        image = cat.get_cat()
+        await ctx.send(image)
