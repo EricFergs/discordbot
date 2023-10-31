@@ -60,12 +60,12 @@ class rotation_info:
 
     def get_xBattles(cls):
         x = json.loads(cls.response.text)['data']['xSchedules']['nodes'][0]
-        stage1 = x['xMatchSetting'][0]['vsStages'][0]['name']
-        stage2 = x['xMatchSetting'][0]['vsStages'][1]['name']
+        stage1 = x['xMatchSetting']['vsStages'][0]['name']
+        stage2 = x['xMatchSetting']['vsStages'][1]['name']
         startTime = x['startTime']
         endTime = x['endTime']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
-        cls.mode = "x Battles"        
+        cls.mode = "X"        
     
