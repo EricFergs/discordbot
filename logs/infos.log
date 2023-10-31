@@ -1,3 +1,23 @@
-WARNING    - 2023-10-27 13:47:26,996 - client          : PyNaCl is not installed, voice will NOT be supported
-INFO       - 2023-10-27 13:47:27,005 - client          : logging in using static token
-INFO       - 2023-10-27 13:47:28,320 - gateway         : Shard ID None has connected to Gateway (Session ID: 221a5b0b63e5350db0389a107e044b06).
+WARNING    - 2023-10-30 18:52:30,044 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-30 18:52:30,050 - client          : logging in using static token
+INFO       - 2023-10-30 18:52:30,982 - gateway         : Shard ID None has connected to Gateway (Session ID: 575d0d3f7712761a3f202c370e8be480).
+ERROR      - 2023-10-30 18:52:46,796 - bot             : Ignoring exception in command fight
+Traceback (most recent call last):
+  File "C:\Users\E\Documents\discordbot\.venv\lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\E\Documents\discordbot\cogs\minigame.py", line 89, in fight
+    file = discord.File(moves.links[move])
+  File "C:\Users\E\Documents\discordbot\.venv\lib\site-packages\discord\file.py", line 97, in __init__
+    self.fp = open(fp, 'rb')
+OSError: [Errno 22] Invalid argument: 'https://cdn.discordapp.com/attachments/936737944788688906/1168712388158177341/Untitled89_20231030170735.png?ex=6552c33a&is=65404e3a&hm=bac8ccd9236476f862cacd62bffcf97c677d48bcf5bb20a684d3c94a29499aee&'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\E\Documents\discordbot\.venv\lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\E\Documents\discordbot\.venv\lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\E\Documents\discordbot\.venv\lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OSError: [Errno 22] Invalid argument: 'https://cdn.discordapp.com/attachments/936737944788688906/1168712388158177341/Untitled89_20231030170735.png?ex=6552c33a&is=65404e3a&hm=bac8ccd9236476f862cacd62bffcf97c677d48bcf5bb20a684d3c94a29499aee&'

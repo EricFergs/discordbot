@@ -26,7 +26,7 @@ def player1(new_embed, value1,value2,player1,player2,line2 = ""):
         )
     new_embed.add_field(name=player1,value= str(value1)+"/100")
     new_embed.insert_field_at(0,name=player2,value=str(value2)+"/100")
-    return new_embed, value1, value2, line1
+    return new_embed, value1, value2, line1, move1
 
 def player2(new_embed, value1,value2,player1,player2,line1):
     move2, damage2 = moves.select_move(player2)
@@ -48,7 +48,7 @@ def player2(new_embed, value1,value2,player1,player2,line1):
         )
     new_embed.add_field(name=player1,value= str(value1)+"/100")
     new_embed.insert_field_at(0,name=player2,value=str(value2)+"/100")
-    return new_embed, value1, value2, line2
+    return new_embed, value1, value2, line2, move2
 
 class Minigame(commands.Cog):
     def __init__(self,bot):
@@ -62,8 +62,7 @@ class Minigame(commands.Cog):
     async def fight(self,ctx):
         author = ctx.author.display_name
         display_name = ctx.message.mentions[0].display_name
-        #author_pfp = ctx.author.display_avatar
-        #display_pfp = ctx.message.mentions[0].display_avatar
+        channel_id = self.bot.get_channel(1165731670524166184)
         image_manipulation.fight_scene(author,display_name)
         embed = discord.Embed(
             colour=discord.Colour.dark_teal(),
@@ -73,17 +72,24 @@ class Minigame(commands.Cog):
         embed.insert_field_at(0,name=display_name,value="100/100")
         value1 = 100
         value2 = 100
-        await ctx.send(file=discord.File('fight.png'))
+        file = discord.File('fight.png')
+        message = await channel_id.send(file=file)
+        image_url = message.attachments[0].url
+        scene = await ctx.send(image_url)
         message = await ctx.send(embed=embed)
         i = 2 
         line2 = ""
         while(value1 > 0 and value2 >0):
             if(i%2 == 0):
-                new_embed, value1, value2, line1 = player1(embed,value1,value2,author,display_name,line2)
+                new_embed, value1, value2, line1, move = player1(embed,value1,value2,author,display_name,line2)
             else:
-                new_embed, value1, value2, line2 = player2(embed,value1,value2,author,display_name,line1)
-            await asyncio.sleep(2.5)
+                new_embed, value1, value2, line2, move = player2(embed,value1,value2,author,display_name,line1)
+            await asyncio.sleep(4)
             await message.edit(embed=new_embed)
+            #file = discord.File(moves.links[move])
+            #move_message = await channel_id.send(file=file)
+            #move_img = move_message.attachments[0].url
+            await scene.edit(content=moves.links[move])
             i += 1
 
 
@@ -108,7 +114,21 @@ class Minigame(commands.Cog):
         await display_pfp.save(filename2)
         await ctx.send("file saved")
         #os.remove(filename)
+
+    @commands.command()
+    async def pic(self,ctx):
+        image = "art/moves/STeals your SQ points.png"
+        await ctx.send(file=discord.File(image))
     
+    
+    @commands.command()
+    async def extract(self,ctx):
+        image = 'maps/haggle.png'
+        file = discord.File(image)
+        channel_id = self.bot.get_channel(1165731670524166184)
+        message = await channel_id.send(file=file)
+        image_url = message.attachments[0].url
+        await ctx.send(image_url)
 
 async def setup(bot):
     await bot.add_cog(Minigame(bot))
@@ -118,21 +138,6 @@ async def setup(bot):
 
 
 
-
-
-        
-'''
-    @bot.command()
-    async def extract(ctx):
-        image = 'maps/haggle.png'
-        file = discord.File(image)
-        channel_id = bot.get_channel(1165731670524166184)
-        message = await channel_id.send(file=file)
-        image_url = message.attachments[0].url
-        await ctx.send(image_url)
-
-
-'''
 
     
 

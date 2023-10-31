@@ -1,30 +1,30 @@
 import random
 attacks = {
     "kiwi": {
-        "Bamboozler" : 49,
-        "punch" : 5,
-        "kick" : 7,
-        "squidbagg" : 17,
-        "tenta missiles" : 30,
-        "aimdrills" : 13,
-        "poke" : 2,
-        "burst bomb" : 20,
-        "line marker" : 10,
-        "steals okane" : 17,
-        "loses braincells" : 11,
+        "Bamboozler" : 29, 
+        #"punch" : 5,
+        #"kick" : 7,
+        #"squidbagg" : 17,
+        #"tenta missiles" : 30,
+        #"aimdrills" : 13,
+        #"poke" : 2,
+        #"burst bomb" : 20,
+        #"line marker" : 10,
+        #"steals okane" : 17,
+        #"loses braincells" : 11,
     },
     "henlo" : {
-        "subway" : 54,
-        "wiper" : 15,
-        "poke" : 2,
-        "tenta missiles" : 30,
-        "disbands sonder" : 27,
-        "learns squeezer" : 7,
-        "punch" : 5,
-        "kick" : 7,
+        #"subway" : 54,
+        #"wiper" : 15,
+        #"poke" : 2,
+        #"tenta missiles" : 30,
+        #"disbands sonder" : 27,
+        #"learns squeezer" : 7,
+        #"punch" : 5,
+        #"kick" : 7,
         "Steals your SQ points" : 17,
-        "this way!" : 10,
-        "machine" : 21
+        #"this way!" : 10,
+        #"machine" : 21
     }, 
     "Jay" : {
         "tri-slosher" : 22,
@@ -77,6 +77,12 @@ pfps = {
     "henlo" : "art/henlo.png",
     "Jay" : "art/jay.png"
 }
+
+links = {
+     "Bamboozler" : 'https://cdn.discordapp.com/attachments/936737944788688906/1168712388158177341/Untitled89_20231030170735.png?ex=6552c33a&is=65404e3a&hm=bac8ccd9236476f862cacd62bffcf97c677d48bcf5bb20a684d3c94a29499aee&',
+     "Steals your SQ points" : 'https://cdn.discordapp.com/attachments/936737944788688906/1168712387885535355/Untitled90_20231030174455.png?ex=6552c33a&is=65404e3a&hm=d27425de8084392b7616b2bd1290ed0ecc62d4ca336bb27a9e9b0a508bd49798&'
+}
+
 
 def select_move(person):
     move = random.choice(list(attacks[person].keys()))
