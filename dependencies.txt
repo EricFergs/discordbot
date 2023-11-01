@@ -1,8 +1,10 @@
-pip install 
-1.discord (for the bot itself)
-2.requests (make HTTP requests)
-3.json (Getting json data from APIs)
-4.dotenv (to hide the API token)
-5.PIL (to construct the graphic for the map rotations)
-6.python-dateutil (for the time conversions)
-7.random (for minigame)
+#pip install 
+#1.discord (for the bot itself)
+#2.requests (make HTTP requests)
+#4.dotenv (to hide the API token)
+#5.PIL (to construct the graphic for the map rotations)
+#6.python-dateutil (for the time conversions)
+#7.random (for minigame)
+
+discord.py==2.3.2
+requests==2.31.0
