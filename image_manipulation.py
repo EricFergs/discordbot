@@ -30,6 +30,7 @@ def make_graphic(Map1, Map2, mode, rotation_time):
         text_color = (144, 238, 144)
     elif mode == "X":
         text_color = (16, 219, 155)
+        text = "X battles"
     else:
         text_color = (204, 85, 0)
     
