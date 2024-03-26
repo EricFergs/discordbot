@@ -1,13 +1,15 @@
 from PIL import Image, ImageDraw, ImageFont
 from maps import matcher
+from mode import modematcher
 
-def make_graphic(Map1, Map2, mode, rotation_time):
+def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
     # Load background image
     background = Image.open('misc/background.png')
 
     # Load map images
     map1 = Image.open('maps/' + matcher.map_mapping[Map1])
     map2 = Image.open('maps/' + matcher.map_mapping[Map2])
+    
 
     # Resize map images
     percentage = 80
@@ -18,6 +20,9 @@ def make_graphic(Map1, Map2, mode, rotation_time):
     background.paste(map1, (0, 665))
     background.paste(map2, (0, 320))
 
+    if gamemode:
+        gamemode = Image.open('mode/'+ modematcher.mode_mapping[gamemode]).convert("RGBA")
+        background.paste(gamemode,(0,185),mask=gamemode)
     # Create a drawing context
     draw = ImageDraw.Draw(background)
 

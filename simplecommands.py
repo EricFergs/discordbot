@@ -22,7 +22,7 @@ def setup(bot):
     async def turf(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_turf()
-        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time,rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 
@@ -30,7 +30,7 @@ def setup(bot):
     async def x(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_xBattles()
-        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time,rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 
@@ -38,7 +38,7 @@ def setup(bot):
     async def ranked(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_xBattles()
-        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time,rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 
@@ -46,7 +46,7 @@ def setup(bot):
     async def solo(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_xBattles()
-        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time,rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')    
 
@@ -55,7 +55,7 @@ def setup(bot):
     async def open(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_anarchyOpen()
-        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time,rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 
@@ -63,7 +63,7 @@ def setup(bot):
     async def series(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_anarchySeries()
-        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time)
+        image_map = image_manipulation.make_graphic(rotation.stage1,rotation.stage2,rotation.mode,rotation.time,rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 

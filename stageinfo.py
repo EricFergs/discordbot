@@ -10,6 +10,7 @@ class rotation_info:
     stage1 = None
     stage2 = None
     mode = None
+    gamemode = None
 
     @classmethod
     def getdata(cls):
@@ -37,7 +38,7 @@ class rotation_info:
         cls.stage1 = stage1
         cls.stage2 = stage2
         cls.mode = "Turf war"
-
+        cls.gamemode = None
 
     def get_anarchyOpen(cls):
         anarchy = cls.getdata()['data']['bankaraSchedules']['nodes'][0]
@@ -45,10 +46,12 @@ class rotation_info:
         stage2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['name']
         startTime = anarchy['startTime']
         endTime = anarchy['endTime']
+        mode = anarchy['bankaraMatchSettings'][1]['vsRule']['name']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
         cls.mode = "Anarchy Open"
+        cls.gamemode = mode
     
 
     def get_anarchySeries(cls):
@@ -57,10 +60,12 @@ class rotation_info:
         stage2 = anarchy['bankaraMatchSettings'][0]['vsStages'][1]['name']
         startTime = anarchy['startTime']
         endTime = anarchy['endTime']
+        mode = anarchy['bankaraMatchSettings'][0]['vsRule']['name']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
         cls.mode = "Anarchy Series"
+        cls.gamemode = mode
 
     def get_xBattles(cls):
         x = cls.getdata()['data']['xSchedules']['nodes'][0]
@@ -68,8 +73,10 @@ class rotation_info:
         stage2 = x['xMatchSetting']['vsStages'][1]['name']
         startTime = x['startTime']
         endTime = x['endTime']
+        mode = x['xMatchSetting']['vsRule']['name']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
-        cls.mode = "X"        
+        cls.mode = "X"  
+        cls.gamemode = mode      
     
