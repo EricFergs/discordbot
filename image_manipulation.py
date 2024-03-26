@@ -25,7 +25,15 @@ def make_graphic(Map1, Map2, mode, rotation_time):
     text = mode
     font_size = 60
     myFont = ImageFont.truetype('Splatoon1.ttf', font_size)
-    text_color = (144, 238, 144) if mode == "Turf war" else (204, 85, 0)
+
+    if mode == "Turf war":
+        text_color = (144, 238, 144)
+    elif mode == "X":
+        text_color = (16, 219, 155)
+        text = "X battles"
+    else:
+        text_color = (204, 85, 0)
+    
     font_width = myFont.getsize(text)[0]
     position = (background.width - font_width) / 2
     draw.text((position, 40), text, fill=text_color, font=myFont)

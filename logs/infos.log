@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 WARNING    - 2023-10-31 12:58:20,970 - client          : PyNaCl is not installed, voice will NOT be supported
 INFO       - 2023-10-31 12:58:20,977 - client          : logging in using static token
 INFO       - 2023-10-31 12:58:21,801 - gateway         : Shard ID None has connected to Gateway (Session ID: 71677c0182b90b24081edbc27887f70d).
+=======
+WARNING    - 2023-10-31 16:53:36,635 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2023-10-31 16:53:36,651 - client          : logging in using static token
+INFO       - 2023-10-31 16:53:37,206 - gateway         : Shard ID None has connected to Gateway (Session ID: da231db2ee7877ba71565bd2c80e680f).
+ERROR      - 2023-10-31 17:06:11,870 - bot             : Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "jp" is not found
+>>>>>>> 31225b5e8f4651433c071e74cb852b763b08a041
