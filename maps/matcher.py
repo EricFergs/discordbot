@@ -20,4 +20,7 @@ map_mapping = {
     "Humpback Pump Track" : "humpback.png",
     "Crableg Capital" : "crableg.png",
     "Shipshape Cargo Co." : "shipeshape.png",
+    "Marlin Airport" : "marlin.png",
+    "Robo ROM-en" : "robo.png",
+    "Bluefin Depot" : "bluefin.png",
 }

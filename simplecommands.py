@@ -6,7 +6,7 @@ import os
 import asyncio
 import cat
 from PIL import Image
-import pytesseract
+
 
 
 def setup(bot):

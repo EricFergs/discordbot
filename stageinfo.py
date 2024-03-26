@@ -1,15 +1,19 @@
 import json
-import requests
 from datetime import datetime
 from dateutil import tz
+from datacaching import fetchdata
 
 class rotation_info:
     url = 'https://splatoon3.ink/data/schedules.json'
-    response = requests.get(url)
+    cache = 'cache/splatink.json'
     time = None
     stage1 = None
     stage2 = None
     mode = None
+
+    @classmethod
+    def getdata(cls):
+        return fetchdata(update = False,json_cache=cls.cache,url = cls.url)
 
     @classmethod
     def time_frame(cls, start, end):
@@ -24,7 +28,7 @@ class rotation_info:
 
     @classmethod
     def get_turf(cls):
-        turf = json.loads(cls.response.text)['data']['regularSchedules']['nodes'][0]
+        turf = cls.getdata()['data']['regularSchedules']['nodes'][0]
         stage1 = turf['regularMatchSetting']['vsStages'][0]['name']
         stage2 = turf['regularMatchSetting']['vsStages'][1]['name']
         startTime = turf['startTime']
@@ -36,7 +40,7 @@ class rotation_info:
 
 
     def get_anarchyOpen(cls):
-        anarchy = json.loads(cls.response.text)['data']['bankaraSchedules']['nodes'][0]
+        anarchy = cls.getdata()['data']['bankaraSchedules']['nodes'][0]
         stage1 = anarchy['bankaraMatchSettings'][1]['vsStages'][0]['name']
         stage2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['name']
         startTime = anarchy['startTime']
@@ -48,7 +52,7 @@ class rotation_info:
     
 
     def get_anarchySeries(cls):
-        anarchy = json.loads(cls.response.text)['data']['bankaraSchedules']['nodes'][0]
+        anarchy = cls.getdata()['data']['bankaraSchedules']['nodes'][0]
         stage1 = anarchy['bankaraMatchSettings'][0]['vsStages'][0]['name']
         stage2 = anarchy['bankaraMatchSettings'][0]['vsStages'][1]['name']
         startTime = anarchy['startTime']
@@ -59,7 +63,7 @@ class rotation_info:
         cls.mode = "Anarchy Series"
 
     def get_xBattles(cls):
-        x = json.loads(cls.response.text)['data']['xSchedules']['nodes'][0]
+        x = cls.getdata()['data']['xSchedules']['nodes'][0]
         stage1 = x['xMatchSetting']['vsStages'][0]['name']
         stage2 = x['xMatchSetting']['vsStages'][1]['name']
         startTime = x['startTime']
