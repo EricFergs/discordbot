@@ -68,6 +68,10 @@ def setup(bot):
         os.remove('final.png')
 
     @bot.command()
+    async def searchmap(ctx):
+        await ctx.send("nope")
+
+    @bot.command()
     async def edit(ctx):
         message = await ctx.send("https://cdn.discordapp.com/attachments/1162519403401859263/1165385244166336602/barnacle.png?ex=6546a896&is=65343396&hm=dbec87d6d93d5abd06f0972385a323063f2830f8c057773207fb1968401a4330&")
         await asyncio.sleep(2)
