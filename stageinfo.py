@@ -116,10 +116,11 @@ class rotation_info:
             stage2 = rotation['map2']
             startTime = rotation['start']
             endTime = rotation['end']
+            gamemode = rotation['mode']
             cls.time_frame(startTime, endTime)
             if (stage1 == map or stage2 == map):
                 final.append(
-                    f'{map} found at time {cls.time}')
+                    f'{map} {gamemode} found at time {cls.time}')
         return final
 
     def findmaps(cls, mode, map=None, gamemode=None):
