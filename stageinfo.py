@@ -82,9 +82,8 @@ class rotation_info:
         cls.mode = "X"
         cls.gamemode = mode
 
-    def findmaps(cls, mode, map, gamemode):
-        final = []
-        allrotation = cls.getdata()['regularmatch'][mode]
+
+    def modeAndStage(cls,final,allrotation,map,gamemode):
         for rotation in allrotation:
             rotation = allrotation[rotation]
             if (rotation['mode'] == gamemode):
@@ -95,5 +94,41 @@ class rotation_info:
                 cls.time_frame(startTime, endTime)
                 if (stage1 == map or stage2 == map):
                     final.append(
-                        f'{map} found at time {cls.time}')
+                        f'{map} {gamemode} found at time {cls.time}')
+        return final
+    
+    def modeOnly(cls,final,allrotation,gamemode):
+        for rotation in allrotation:
+            rotation = allrotation[rotation]
+            if (rotation['mode'] == gamemode):
+                stage1 = rotation['map1']
+                stage2 = rotation['map2']
+                startTime = rotation['start']
+                endTime = rotation['end']
+                cls.time_frame(startTime, endTime)
+                final.append(f'{gamemode} {stage1} and {stage2} at times {cls.time}')
+        return final
+    
+    def mapOnly(cls,final,allrotation,map):
+        for rotation in allrotation:
+            rotation = allrotation[rotation]
+            stage1 = rotation['map1']
+            stage2 = rotation['map2']
+            startTime = rotation['start']
+            endTime = rotation['end']
+            cls.time_frame(startTime, endTime)
+            if (stage1 == map or stage2 == map):
+                final.append(
+                    f'{map} found at time {cls.time}')
+        return final
+
+    def findmaps(cls, mode, map=None, gamemode=None):
+        final = []
+        allrotation = cls.getdata()['regularmatch'][mode]
+        if(map and gamemode):
+            final = cls.modeAndStage(final,allrotation,map,gamemode)
+        elif(gamemode):
+            final = cls.modeOnly(final,allrotation,gamemode)
+        else:
+            final= cls.mapOnly(final,allrotation,map)
         return final
