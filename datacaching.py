@@ -1,7 +1,7 @@
 import json
 import requests
 from datetime import datetime, timezone
-
+from clearjson import filterData
 
 def fetchdata(*, update: bool = False, json_cache: str, url: str):
     if update:
@@ -13,6 +13,7 @@ def fetchdata(*, update: bool = False, json_cache: str, url: str):
                 rotationtime = json_data['data']['regularSchedules']['nodes'][0]['endTime']
                 current_datetime_utc = datetime.now(timezone.utc)
                 currtime = current_datetime_utc.strftime('%Y-%m-%dT%H:%M:%SZ')
+                print(currtime +" " + rotationtime)
                 if (currtime > rotationtime):
                     json_data = None
         except (FileNotFoundError, json.JSONDecodeError) as e:
@@ -23,6 +24,9 @@ def fetchdata(*, update: bool = False, json_cache: str, url: str):
         json_data = requests.get(url).json()
         with open(json_cache, 'w') as file:
             json.dump(json_data, file)
+        cleanData = filterData(json_data)
+        with open('cache/splatdata.json', 'w') as file:
+            json.dump(cleanData, file)
     return json_data
 
 
