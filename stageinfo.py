@@ -6,7 +6,7 @@ from datacaching import fetchdata
 
 class rotation_info:
     url = 'https://splatoon3.ink/data/schedules.json'
-    cache = 'cache/splatink.json'
+    cache = 'cache/splatdata.json'
     time = None
     stage1 = None
     stage2 = None
@@ -32,11 +32,11 @@ class rotation_info:
 
     @classmethod
     def get_turf(cls):
-        turf = cls.getdata()['data']['regularSchedules']['nodes'][0]
-        stage1 = turf['regularMatchSetting']['vsStages'][0]['name']
-        stage2 = turf['regularMatchSetting']['vsStages'][1]['name']
-        startTime = turf['startTime']
-        endTime = turf['endTime']
+        turf = cls.getdata()['regularmatch']['turf']['1']
+        stage1 = turf['map1']
+        stage2 = turf['map2']
+        startTime = turf['start']
+        endTime = turf['end']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
@@ -44,12 +44,12 @@ class rotation_info:
         cls.gamemode = None
 
     def get_anarchyOpen(cls):
-        anarchy = cls.getdata()['data']['bankaraSchedules']['nodes'][0]
-        stage1 = anarchy['bankaraMatchSettings'][1]['vsStages'][0]['name']
-        stage2 = anarchy['bankaraMatchSettings'][1]['vsStages'][1]['name']
-        startTime = anarchy['startTime']
-        endTime = anarchy['endTime']
-        mode = anarchy['bankaraMatchSettings'][1]['vsRule']['name']
+        anarchy = cls.getdata()['regularmatch']['open']['1']
+        stage1 = anarchy['map1']
+        stage2 = anarchy['map2']
+        startTime = anarchy['start']
+        endTime = anarchy['end']
+        mode = anarchy['mode']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
@@ -57,12 +57,12 @@ class rotation_info:
         cls.gamemode = mode
 
     def get_anarchySeries(cls):
-        anarchy = cls.getdata()['data']['bankaraSchedules']['nodes'][0]
-        stage1 = anarchy['bankaraMatchSettings'][0]['vsStages'][0]['name']
-        stage2 = anarchy['bankaraMatchSettings'][0]['vsStages'][1]['name']
-        startTime = anarchy['startTime']
-        endTime = anarchy['endTime']
-        mode = anarchy['bankaraMatchSettings'][0]['vsRule']['name']
+        anarchy = cls.getdata()['regularmatch']['series']['1']
+        stage1 = anarchy['map1']
+        stage2 = anarchy['map2']
+        startTime = anarchy['start']
+        endTime = anarchy['end']
+        mode = anarchy['mode']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
@@ -70,44 +70,28 @@ class rotation_info:
         cls.gamemode = mode
 
     def get_xBattles(cls):
-        x = cls.getdata()['data']['xSchedules']['nodes'][0]
-        stage1 = x['xMatchSetting']['vsStages'][0]['name']
-        stage2 = x['xMatchSetting']['vsStages'][1]['name']
-        startTime = x['startTime']
-        endTime = x['endTime']
-        mode = x['xMatchSetting']['vsRule']['name']
+        x = cls.getdata()['regularmatch']['x']['1']
+        stage1 = x['map1']
+        stage2 = x['map2']
+        startTime = x['start']
+        endTime = x['end']
+        mode = x['mode']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
         cls.mode = "X"
         cls.gamemode = mode
 
-    def findmaps(cls, mode, map, gamemode, open=False):
+    def findmaps(cls, mode, map, gamemode):
         final = []
-        if (mode == "xSchedules"):
-            setting2 = "xMatchSetting"
-        elif (mode == "regularSchedules"):
-            setting2 = "regularMatchSetting"
-        else:
-            setting2 = "bankaraMatchSettings"
-
-        allrotation = cls.getdata()['data'][mode]['nodes']
+        allrotation = cls.getdata()['regularmatch'][mode]
         for rotation in allrotation:
-            result = (gamemode == rotation[setting2]['vsRule']['name']) \
-                    if setting2 != "bankaraMatchSettings" \
-                    else (gamemode == rotation[setting2][1]['vsRule']['name'] if open else gamemode == rotation[setting2][0]['vsRule']['name'])
-            if (result):
-                if (mode == "bankaraSchedules" and open == False):
-                    stage1 = rotation['bankaraMatchSettings'][0]['vsStages'][0]['name']
-                    stage2 = rotation['bankaraMatchSettings'][0]['vsStages'][1]['name']
-                elif (mode == "bankaraSchedules"):
-                    stage1 = rotation['bankaraMatchSettings'][1]['vsStages'][0]['name']
-                    stage2 = rotation['bankaraMatchSettings'][1]['vsStages'][1]['name']
-                else:
-                    stage1 = rotation[setting2]['vsStages'][0]['name']
-                    stage2 = rotation[setting2]['vsStages'][1]['name']
-                startTime = rotation['startTime']
-                endTime = rotation['endTime']
+            rotation = allrotation[rotation]
+            if (rotation['mode'] == gamemode):
+                stage1 = rotation['map1']
+                stage2 = rotation['map2']
+                startTime = rotation['start']
+                endTime = rotation['end']
                 cls.time_frame(startTime, endTime)
                 if (stage1 == map or stage2 == map):
                     final.append(

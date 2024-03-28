@@ -67,14 +67,11 @@ def setup(bot):
     @bot.command()
     async def searchmap(ctx, *args):
         if len(args) == 3:
-            mode = matcher.mode[args[0]]
+            mode = args[0]
             map = matcher.abbreviations[args[1]]
             gamemode = matcher.gamemodes[args[2]]
             rotaton = stageinfo.rotation_info()
-            if args[0] == "open":
-                maplist = rotaton.findmaps(mode, map, gamemode,True)
-            else:
-                maplist = rotaton.findmaps(mode, map, gamemode)
+            maplist = rotaton.findmaps(mode, map, gamemode)
             if (len(maplist) == 0):
                 await ctx.send(f'No {gamemode} {map} for {mode}')
             else:

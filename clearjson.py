@@ -3,11 +3,11 @@ import json
 
 def create_regularmatch():
     cleanData = {
-        "Regularmatch": {
-            "turf": [],
-            "open": [],
-            "series": [],
-            "x": []
+        "regularmatch": {
+            "turf": {},
+            "open": {},
+            "series": {},
+            "x": {}
         },
     }
     return cleanData
@@ -23,16 +23,14 @@ def getTurf(cleanData, data):
         start = rotation['startTime']
         end = rotation['endTime']
         rotation_data = {
-            i: {
                 "mode": mode,
                 "map1": map1,
                 "map2": map2,
                 "start": start,
                 "end": end
-            }
         }
+        cleanData['regularmatch']['turf'][i] = rotation_data
         i += 1
-        cleanData['Regularmatch']['turf'].append(rotation_data)
     return cleanData
 
 
@@ -46,17 +44,16 @@ def getOpen(cleanData, data):
         start = rotation['startTime']
         end = rotation['endTime']
         rotation_data = {
-            i: {
                 "mode": mode,
                 "map1": map1,
                 "map2": map2,
                 "start": start,
                 "end": end
-            }
         }
+        cleanData['regularmatch']['open'][i] = rotation_data
         i += 1
-        cleanData['Regularmatch']['open'].append(rotation_data)
     return cleanData
+
 
 def getSeries(cleanData, data):
     series = data['data']['bankaraSchedules']['nodes']
@@ -68,17 +65,16 @@ def getSeries(cleanData, data):
         start = rotation['startTime']
         end = rotation['endTime']
         rotation_data = {
-            i: {
                 "mode": mode,
                 "map1": map1,
                 "map2": map2,
                 "start": start,
                 "end": end
-            }
         }
+        cleanData['regularmatch']['series'][i] = rotation_data
         i += 1
-        cleanData['Regularmatch']['series'].append(rotation_data)
     return cleanData
+
 
 def getX(cleanData, data):
     turf = data['data']['xSchedules']['nodes']
@@ -90,17 +86,16 @@ def getX(cleanData, data):
         start = rotation['startTime']
         end = rotation['endTime']
         rotation_data = {
-            i: {
                 "mode": mode,
                 "map1": map1,
                 "map2": map2,
                 "start": start,
                 "end": end
-            }
         }
+        cleanData['regularmatch']['x'][i] = rotation_data
         i += 1
-        cleanData['Regularmatch']['x'].append(rotation_data)
     return cleanData
+
 
 def filterData(data):
     cleanData = create_regularmatch()
@@ -109,7 +104,8 @@ def filterData(data):
     cleanData = getSeries(cleanData, data)
     cleanData = getX(cleanData, data)
     return cleanData
-    
+
+
 if __name__ == "__main__":
     with open('cache/splatink.json', 'r') as file:
         data = json.load(file)
