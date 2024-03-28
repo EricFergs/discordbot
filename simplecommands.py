@@ -26,32 +26,25 @@ def setup(bot):
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
 
-    @bot.command()
-    async def x(ctx):
+    async def send_rotation_info(ctx):
         rotation = stageinfo.rotation_info()
         rotation.get_xBattles()
         image_map = image_manipulation.make_graphic(
             rotation.stage1, rotation.stage2, rotation.mode, rotation.time, rotation.gamemode)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
+
+    @bot.command()
+    async def x(ctx):
+        await send_rotation_info(ctx)
 
     @bot.command()
     async def ranked(ctx):
-        rotation = stageinfo.rotation_info()
-        rotation.get_xBattles()
-        image_map = image_manipulation.make_graphic(
-            rotation.stage1, rotation.stage2, rotation.mode, rotation.time, rotation.gamemode)
-        await ctx.send(file=discord.File(image_map))
-        os.remove('final.png')
+        await send_rotation_info(ctx)
 
     @bot.command()
     async def solo(ctx):
-        rotation = stageinfo.rotation_info()
-        rotation.get_xBattles()
-        image_map = image_manipulation.make_graphic(
-            rotation.stage1, rotation.stage2, rotation.mode, rotation.time, rotation.gamemode)
-        await ctx.send(file=discord.File(image_map))
-        os.remove('final.png')
+        await send_rotation_info(ctx)
 
     @bot.command()
     async def open(ctx):
