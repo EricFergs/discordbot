@@ -82,6 +82,14 @@ class rotation_info:
         cls.mode = "X"
         cls.gamemode = mode
 
+    def get_salmon(cls):
+        salm = cls.getdata()['data']['coopGroupingSchedule']['regularSchedules']['nodes'][0]
+        stage = salm['setting']['coopStage']['name']
+        weapon1 = salm['setting']['weapons'][0]['name']
+        weapon2 = salm['setting']['weapons'][1]['name']
+        weapon3 = salm['setting']['weapons'][2]['name']
+        weapon4 = salm['setting']['weapons'][3]['name']
+
     def findmaps(cls, mode, map, gamemode, open=False):
         final = []
         if (mode == "xSchedules"):
