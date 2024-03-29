@@ -65,6 +65,10 @@ def setup(bot):
         os.remove('final.png')
 
     @bot.command()
+    async def salmon(ctx):
+        await send_rotation_info(ctx)
+
+    @bot.command()
     async def searchmap(ctx, *args):
         if len(args) == 3:
             mode = matcher.mode[args[0]]
