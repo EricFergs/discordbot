@@ -28,12 +28,6 @@ gamemodes = {
     "tc": "Tower Control",
     "cb": "Clam Blitz",
     "zones": "Splat Zones",
-    "rm": "Rainmaker"
-}
-
-mode = {
-    "open": "bankaraSchedules",
-    "series": "bankaraSchedules",
-    "turf": "regularSchedules",
-    "x": "xSchedules",
+    "rm": "Rainmaker",
+    "turf": "Turf War"
 }

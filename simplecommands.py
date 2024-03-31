@@ -8,6 +8,7 @@ import cat
 from PIL import Image
 import matcher
 
+
 def setup(bot):
     @bot.command()
     async def riki(ctx):
@@ -74,13 +75,31 @@ def setup(bot):
             mode = matcher.mode[args[0]]
             map = matcher.abbreviations[args[1]]
             gamemode = matcher.gamemodes[args[2]]
+
             rotaton = stageinfo.rotation_info()
-            if args[0] == "open":
-                maplist = rotaton.findmaps(mode, map, gamemode,True)
+            invalid = False
+            if (word in matcher.abbreviations):
+                map = matcher.abbreviations[word]
+                maplist = rotaton.findmaps("open", map=map)
+            elif (word in matcher.gamemodes):
+                gamemode = matcher.gamemodes[word]
+                maplist = rotaton.findmaps("open",gamemode=gamemode)
             else:
-                maplist = rotaton.findmaps(mode, map, gamemode)
+                await ctx.send("Invalid please send map or mode")
+                invalid = True
+            if not invalid:
+                if (len(maplist) == 0):
+                    await ctx.send(f'No matches')
+                else:
+                    list_as_string = '\n'.join(maplist)
+                    await ctx.send(list_as_string)
+        elif (len(args) == 2):
+            map = matcher.abbreviations[args[0]]
+            gamemode = matcher.gamemodes[args[1]]
+            rotaton = stageinfo.rotation_info()
+            maplist = rotaton.findmaps("open", map, gamemode)
             if (len(maplist) == 0):
-                await ctx.send(f'No {gamemode} {map} for {mode}')
+                await ctx.send(f'No {gamemode} {map}')
             else:
                 list_as_string = '\n'.join(maplist)
                 await ctx.send(list_as_string)
