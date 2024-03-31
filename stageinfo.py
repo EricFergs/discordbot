@@ -9,9 +9,19 @@ class rotation_info:
     cache = 'cache/splatink.json'
     time = None
     stage1 = None
+    
+    #ranked specific attributes
     stage2 = None
     mode = None
     gamemode = None
+
+    #salmon specific attributes
+    boss = None
+    weapon1 = None
+    weapon2 = None
+    weapon3 = None
+    weapon4 = None
+    
 
     @classmethod
     def getdata(cls):
@@ -81,14 +91,18 @@ class rotation_info:
         cls.stage2 = stage2
         cls.mode = "X"
         cls.gamemode = mode
-
+    
     def get_salmon(cls):
         salm = cls.getdata()['data']['coopGroupingSchedule']['regularSchedules']['nodes'][0]
-        stage = salm['setting']['coopStage']['name']
-        weapon1 = salm['setting']['weapons'][0]['name']
-        weapon2 = salm['setting']['weapons'][1]['name']
-        weapon3 = salm['setting']['weapons'][2]['name']
-        weapon4 = salm['setting']['weapons'][3]['name']
+        cls.stage1 = salm['setting']['coopStage']['name']
+        cls.weapon1 = salm['setting']['weapons'][0]['name']
+        cls.weapon2 = salm['setting']['weapons'][1]['name']
+        cls.weapon3 = salm['setting']['weapons'][2]['name']
+        cls.weapon4 = salm['setting']['weapons'][3]['name']
+        startTime = salm['startTime']
+        endTime = salm['endTime']
+        cls.time_frame(startTime, endTime)
+
 
     def findmaps(cls, mode, map, gamemode, open=False):
         final = []
