@@ -66,9 +66,16 @@ def setup(bot):
         os.remove('final.png')
 
     @bot.command()
-    async def searchopen(ctx, *args):
-        if (len(args) == 1):
-            word = args[0]
+    async def salmon(ctx):
+        await send_rotation_info(ctx)
+
+    @bot.command()
+    async def searchmap(ctx, *args):
+        if len(args) == 3:
+            mode = matcher.mode[args[0]]
+            map = matcher.abbreviations[args[1]]
+            gamemode = matcher.gamemodes[args[2]]
+
             rotaton = stageinfo.rotation_info()
             invalid = False
             if (word in matcher.abbreviations):
