@@ -4,24 +4,11 @@ from dateutil import tz
 from datacaching import fetchdata
 
 
-class rotation_info:
+class splatinfo:
     url = 'https://splatoon3.ink/data/schedules.json'
     cache = 'cache/splatdata.json'
     time = None
     stage1 = None
-    
-    #ranked specific attributes
-    stage2 = None
-    mode = None
-    gamemode = None
-
-    #salmon specific attributes
-    boss = None
-    weapon1 = None
-    weapon2 = None
-    weapon3 = None
-    weapon4 = None
-    
 
     @classmethod
     def getdata(cls):
@@ -39,6 +26,12 @@ class rotation_info:
         formatted_end_time = end_time.strftime("%I:%M %p")
         formatted_time_range = f"{formatted_start_time} - {formatted_end_time}"
         cls.time = formatted_time_range
+
+
+class rotation_info(splatinfo):
+    stage2 = None
+    mode = None
+    gamemode = None
 
     @classmethod
     def get_turf(cls):
@@ -91,21 +84,8 @@ class rotation_info:
         cls.stage2 = stage2
         cls.mode = "X"
         cls.gamemode = mode
-    
-    def get_salmon(cls):
-        salm = cls.getdata()['data']['coopGroupingSchedule']['regularSchedules']['nodes'][0]
-        cls.stage1 = salm['setting']['coopStage']['name']
-        cls.weapon1 = salm['setting']['weapons'][0]['name']
-        cls.weapon2 = salm['setting']['weapons'][1]['name']
-        cls.weapon3 = salm['setting']['weapons'][2]['name']
-        cls.weapon4 = salm['setting']['weapons'][3]['name']
-        startTime = salm['startTime']
-        endTime = salm['endTime']
-        cls.time_frame(startTime, endTime)
 
-
-
-    def modeAndStage(cls,final,allrotation,map,gamemode):
+    def modeAndStage(cls, final, allrotation, map, gamemode):
         for rotation in allrotation:
             rotation = allrotation[rotation]
             if (rotation['mode'] == gamemode):
@@ -118,8 +98,8 @@ class rotation_info:
                     final.append(
                         f'{map} {gamemode} found at time {cls.time}')
         return final
-    
-    def modeOnly(cls,final,allrotation,gamemode):
+
+    def modeOnly(cls, final, allrotation, gamemode):
         for rotation in allrotation:
             rotation = allrotation[rotation]
             if (rotation['mode'] == gamemode):
@@ -128,10 +108,11 @@ class rotation_info:
                 startTime = rotation['start']
                 endTime = rotation['end']
                 cls.time_frame(startTime, endTime)
-                final.append(f'{gamemode} {stage1} and {stage2} at times {cls.time}')
+                final.append(
+                    f'{gamemode} {stage1} and {stage2} at times {cls.time}')
         return final
-    
-    def mapOnly(cls,final,allrotation,map):
+
+    def mapOnly(cls, final, allrotation, map):
         for rotation in allrotation:
             rotation = allrotation[rotation]
             stage1 = rotation['map1']
@@ -148,10 +129,32 @@ class rotation_info:
     def findmaps(cls, mode, map=None, gamemode=None):
         final = []
         allrotation = cls.getdata()['regularmatch'][mode]
-        if(map and gamemode):
-            final = cls.modeAndStage(final,allrotation,map,gamemode)
-        elif(gamemode):
-            final = cls.modeOnly(final,allrotation,gamemode)
+        if (map and gamemode):
+            final = cls.modeAndStage(final, allrotation, map, gamemode)
+        elif (gamemode):
+            final = cls.modeOnly(final, allrotation, gamemode)
         else:
-            final= cls.mapOnly(final,allrotation,map)
+            final = cls.mapOnly(final, allrotation, map)
         return final
+
+
+class salmon_info(splatinfo):
+
+    boss = None
+    weapon1 = None
+    weapon2 = None
+    weapon3 = None
+    weapon4 = None
+
+    def get_salmon(cls):
+        salm = cls.getdata()[
+            'data']['coopGroupingSchedule']['regularSchedules']['nodes'][0]
+        cls.stage1 = salm['setting']['coopStage']['name']
+        cls.weapon1 = salm['setting']['weapons'][0]['name']
+        cls.weapon2 = salm['setting']['weapons'][1]['name']
+        cls.weapon3 = salm['setting']['weapons'][2]['name']
+        cls.weapon4 = salm['setting']['weapons'][3]['name']
+        startTime = salm['startTime']
+        endTime = salm['endTime']
+        cls.time_frame(startTime, endTime)
+        word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time}'
