@@ -1,7 +1,7 @@
 import json
 import requests
 from datetime import datetime, timezone
-from clearjson import filterData
+from cache.clearjson import filterData
 
 def fetchdata(*, update: bool = False, json_cache: str, url: str):
     if update:

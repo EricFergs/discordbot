@@ -3,408 +3,350 @@
         "turf": {
             "1": {
                 "mode": "Turf War",
-                "map1": "Museum d'Alfonsino",
-                "map2": "Bluefin Depot",
-                "start": "2024-03-28T00:00:00Z",
-                "end": "2024-03-28T02:00:00Z"
+                "map1": "Eeltail Alley",
+                "map2": "Museum d'Alfonsino",
+                "start": "2024-04-02T20:00:00Z",
+                "end": "2024-04-02T22:00:00Z"
             },
             "2": {
                 "mode": "Turf War",
-                "map1": "Um'ami Ruins",
-                "map2": "Flounder Heights",
-                "start": "2024-03-28T02:00:00Z",
-                "end": "2024-03-28T04:00:00Z"
+                "map1": "Hagglefish Market",
+                "map2": "Um'ami Ruins",
+                "start": "2024-04-02T22:00:00Z",
+                "end": "2024-04-03T00:00:00Z"
             },
             "3": {
                 "mode": "Turf War",
-                "map1": "Hagglefish Market",
-                "map2": "Crableg Capital",
-                "start": "2024-03-28T04:00:00Z",
-                "end": "2024-03-28T06:00:00Z"
+                "map1": "Flounder Heights",
+                "map2": "Robo ROM-en",
+                "start": "2024-04-03T00:00:00Z",
+                "end": "2024-04-03T02:00:00Z"
             },
             "4": {
                 "mode": "Turf War",
-                "map1": "Barnacle & Dime",
-                "map2": "Hammerhead Bridge",
-                "start": "2024-03-28T06:00:00Z",
-                "end": "2024-03-28T08:00:00Z"
+                "map1": "Inkblot Art Academy",
+                "map2": "Humpback Pump Track",
+                "start": "2024-04-03T02:00:00Z",
+                "end": "2024-04-03T04:00:00Z"
             },
             "5": {
                 "mode": "Turf War",
-                "map1": "Manta Maria",
-                "map2": "Marlin Airport",
-                "start": "2024-03-28T08:00:00Z",
-                "end": "2024-03-28T10:00:00Z"
+                "map1": "Brinewater Springs",
+                "map2": "Shipshape Cargo Co.",
+                "start": "2024-04-03T04:00:00Z",
+                "end": "2024-04-03T06:00:00Z"
             },
             "6": {
                 "mode": "Turf War",
-                "map1": "Inkblot Art Academy",
-                "map2": "Robo ROM-en",
-                "start": "2024-03-28T10:00:00Z",
-                "end": "2024-03-28T12:00:00Z"
+                "map1": "Mincemeat Metalworks",
+                "map2": "Barnacle & Dime",
+                "start": "2024-04-03T06:00:00Z",
+                "end": "2024-04-03T08:00:00Z"
             },
             "7": {
                 "mode": "Turf War",
-                "map1": "MakoMart",
-                "map2": "Shipshape Cargo Co.",
-                "start": "2024-03-28T12:00:00Z",
-                "end": "2024-03-28T14:00:00Z"
+                "map1": "Undertow Spillway",
+                "map2": "Crableg Capital",
+                "start": "2024-04-03T08:00:00Z",
+                "end": "2024-04-03T10:00:00Z"
             },
             "8": {
                 "mode": "Turf War",
-                "map1": "Sturgeon Shipyard",
-                "map2": "Humpback Pump Track",
-                "start": "2024-03-28T14:00:00Z",
-                "end": "2024-03-28T16:00:00Z"
+                "map1": "Wahoo World",
+                "map2": "Manta Maria",
+                "start": "2024-04-03T10:00:00Z",
+                "end": "2024-04-03T12:00:00Z"
             },
             "9": {
                 "mode": "Turf War",
-                "map1": "Brinewater Springs",
-                "map2": "Museum d'Alfonsino",
-                "start": "2024-03-28T16:00:00Z",
-                "end": "2024-03-28T18:00:00Z"
+                "map1": "Barnacle & Dime",
+                "map2": "Sturgeon Shipyard",
+                "start": "2024-04-03T12:00:00Z",
+                "end": "2024-04-03T14:00:00Z"
             },
             "10": {
                 "mode": "Turf War",
                 "map1": "Scorch Gorge",
-                "map2": "Mahi-Mahi Resort",
-                "start": "2024-03-28T18:00:00Z",
-                "end": "2024-03-28T20:00:00Z"
+                "map2": "Wahoo World",
+                "start": "2024-04-03T14:00:00Z",
+                "end": "2024-04-03T16:00:00Z"
             },
             "11": {
                 "mode": "Turf War",
-                "map1": "Brinewater Springs",
-                "map2": "Inkblot Art Academy",
-                "start": "2024-03-28T20:00:00Z",
-                "end": "2024-03-28T22:00:00Z"
+                "map1": "Inkblot Art Academy",
+                "map2": "Shipshape Cargo Co.",
+                "start": "2024-04-03T16:00:00Z",
+                "end": "2024-04-03T18:00:00Z"
             },
             "12": {
                 "mode": "Turf War",
-                "map1": "Humpback Pump Track",
-                "map2": "Shipshape Cargo Co.",
-                "start": "2024-03-28T22:00:00Z",
-                "end": "2024-03-29T00:00:00Z"
-            },
-            "13": {
-                "mode": "Turf War",
-                "map1": "Um'ami Ruins",
-                "map2": "Barnacle & Dime",
-                "start": "2024-03-29T00:00:00Z",
-                "end": "2024-03-29T02:00:00Z"
+                "map1": "Sturgeon Shipyard",
+                "map2": "Marlin Airport",
+                "start": "2024-04-03T18:00:00Z",
+                "end": "2024-04-03T20:00:00Z"
             }
         },
         "open": {
             "1": {
-                "mode": "Clam Blitz",
-                "map1": "Undertow Spillway",
+                "mode": "Rainmaker",
+                "map1": "Mincemeat Metalworks",
                 "map2": "Wahoo World",
-                "start": "2024-03-28T00:00:00Z",
-                "end": "2024-03-28T02:00:00Z"
+                "start": "2024-04-02T20:00:00Z",
+                "end": "2024-04-02T22:00:00Z"
             },
             "2": {
                 "mode": "Splat Zones",
-                "map1": "Hammerhead Bridge",
-                "map2": "Humpback Pump Track",
-                "start": "2024-03-28T02:00:00Z",
-                "end": "2024-03-28T04:00:00Z"
+                "map1": "Humpback Pump Track",
+                "map2": "Crableg Capital",
+                "start": "2024-04-02T22:00:00Z",
+                "end": "2024-04-03T00:00:00Z"
             },
             "3": {
-                "mode": "Tower Control",
-                "map1": "Manta Maria",
-                "map2": "Marlin Airport",
-                "start": "2024-03-28T04:00:00Z",
-                "end": "2024-03-28T06:00:00Z"
+                "mode": "Rainmaker",
+                "map1": "Shipshape Cargo Co.",
+                "map2": "Bluefin Depot",
+                "start": "2024-04-03T00:00:00Z",
+                "end": "2024-04-03T02:00:00Z"
             },
             "4": {
-                "mode": "Rainmaker",
-                "map1": "Eeltail Alley",
-                "map2": "Um'ami Ruins",
-                "start": "2024-03-28T06:00:00Z",
-                "end": "2024-03-28T08:00:00Z"
+                "mode": "Tower Control",
+                "map1": "Brinewater Springs",
+                "map2": "Museum d'Alfonsino",
+                "start": "2024-04-03T02:00:00Z",
+                "end": "2024-04-03T04:00:00Z"
             },
             "5": {
-                "mode": "Clam Blitz",
+                "mode": "Splat Zones",
                 "map1": "Scorch Gorge",
-                "map2": "Bluefin Depot",
-                "start": "2024-03-28T08:00:00Z",
-                "end": "2024-03-28T10:00:00Z"
+                "map2": "Undertow Spillway",
+                "start": "2024-04-03T04:00:00Z",
+                "end": "2024-04-03T06:00:00Z"
             },
             "6": {
-                "mode": "Splat Zones",
-                "map1": "Brinewater Springs",
-                "map2": "Sturgeon Shipyard",
-                "start": "2024-03-28T10:00:00Z",
-                "end": "2024-03-28T12:00:00Z"
+                "mode": "Clam Blitz",
+                "map1": "Flounder Heights",
+                "map2": "Inkblot Art Academy",
+                "start": "2024-04-03T06:00:00Z",
+                "end": "2024-04-03T08:00:00Z"
             },
             "7": {
-                "mode": "Tower Control",
-                "map1": "Barnacle & Dime",
-                "map2": "Inkblot Art Academy",
-                "start": "2024-03-28T12:00:00Z",
-                "end": "2024-03-28T14:00:00Z"
+                "mode": "Rainmaker",
+                "map1": "Eeltail Alley",
+                "map2": "Sturgeon Shipyard",
+                "start": "2024-04-03T08:00:00Z",
+                "end": "2024-04-03T10:00:00Z"
             },
             "8": {
-                "mode": "Rainmaker",
-                "map1": "Flounder Heights",
-                "map2": "Robo ROM-en",
-                "start": "2024-03-28T14:00:00Z",
-                "end": "2024-03-28T16:00:00Z"
+                "mode": "Tower Control",
+                "map1": "Um'ami Ruins",
+                "map2": "Hammerhead Bridge",
+                "start": "2024-04-03T10:00:00Z",
+                "end": "2024-04-03T12:00:00Z"
             },
             "9": {
-                "mode": "Clam Blitz",
-                "map1": "Mahi-Mahi Resort",
-                "map2": "Shipshape Cargo Co.",
-                "start": "2024-03-28T16:00:00Z",
-                "end": "2024-03-28T18:00:00Z"
+                "mode": "Splat Zones",
+                "map1": "MakoMart",
+                "map2": "Manta Maria",
+                "start": "2024-04-03T12:00:00Z",
+                "end": "2024-04-03T14:00:00Z"
             },
             "10": {
-                "mode": "Splat Zones",
-                "map1": "Museum d'Alfonsino",
-                "map2": "Crableg Capital",
-                "start": "2024-03-28T18:00:00Z",
-                "end": "2024-03-28T20:00:00Z"
+                "mode": "Clam Blitz",
+                "map1": "Mincemeat Metalworks",
+                "map2": "Bluefin Depot",
+                "start": "2024-04-03T14:00:00Z",
+                "end": "2024-04-03T16:00:00Z"
             },
             "11": {
-                "mode": "Tower Control",
-                "map1": "Undertow Spillway",
-                "map2": "MakoMart",
-                "start": "2024-03-28T20:00:00Z",
-                "end": "2024-03-28T22:00:00Z"
+                "mode": "Rainmaker",
+                "map1": "Mahi-Mahi Resort",
+                "map2": "Humpback Pump Track",
+                "start": "2024-04-03T16:00:00Z",
+                "end": "2024-04-03T18:00:00Z"
             },
             "12": {
-                "mode": "Rainmaker",
-                "map1": "Museum d'Alfonsino",
-                "map2": "Manta Maria",
-                "start": "2024-03-28T22:00:00Z",
-                "end": "2024-03-29T00:00:00Z"
-            },
-            "13": {
-                "mode": "Splat Zones",
-                "map1": "Hagglefish Market",
-                "map2": "Shipshape Cargo Co.",
-                "start": "2024-03-29T00:00:00Z",
-                "end": "2024-03-29T02:00:00Z"
+                "mode": "Tower Control",
+                "map1": "Eeltail Alley",
+                "map2": "Undertow Spillway",
+                "start": "2024-04-03T18:00:00Z",
+                "end": "2024-04-03T20:00:00Z"
             }
         },
         "series": {
             "1": {
                 "mode": "Tower Control",
-                "map1": "Eeltail Alley",
-                "map2": "Flounder Heights",
-                "start": "2024-03-28T00:00:00Z",
-                "end": "2024-03-28T02:00:00Z"
+                "map1": "Scorch Gorge",
+                "map2": "Humpback Pump Track",
+                "start": "2024-04-02T20:00:00Z",
+                "end": "2024-04-02T22:00:00Z"
             },
             "2": {
-                "mode": "Rainmaker",
-                "map1": "Hagglefish Market",
-                "map2": "Crableg Capital",
-                "start": "2024-03-28T02:00:00Z",
-                "end": "2024-03-28T04:00:00Z"
-            },
-            "3": {
                 "mode": "Clam Blitz",
                 "map1": "Museum d'Alfonsino",
-                "map2": "Inkblot Art Academy",
-                "start": "2024-03-28T04:00:00Z",
-                "end": "2024-03-28T06:00:00Z"
+                "map2": "Sturgeon Shipyard",
+                "start": "2024-04-02T22:00:00Z",
+                "end": "2024-04-03T00:00:00Z"
+            },
+            "3": {
+                "mode": "Splat Zones",
+                "map1": "Inkblot Art Academy",
+                "map2": "Marlin Airport",
+                "start": "2024-04-03T00:00:00Z",
+                "end": "2024-04-03T02:00:00Z"
             },
             "4": {
-                "mode": "Splat Zones",
-                "map1": "Scorch Gorge",
-                "map2": "Manta Maria",
-                "start": "2024-03-28T06:00:00Z",
-                "end": "2024-03-28T08:00:00Z"
+                "mode": "Clam Blitz",
+                "map1": "Crableg Capital",
+                "map2": "Shipshape Cargo Co.",
+                "start": "2024-04-03T02:00:00Z",
+                "end": "2024-04-03T04:00:00Z"
             },
             "5": {
-                "mode": "Tower Control",
-                "map1": "MakoMart",
-                "map2": "Humpback Pump Track",
-                "start": "2024-03-28T08:00:00Z",
-                "end": "2024-03-28T10:00:00Z"
+                "mode": "Rainmaker",
+                "map1": "Mahi-Mahi Resort",
+                "map2": "Robo ROM-en",
+                "start": "2024-04-03T04:00:00Z",
+                "end": "2024-04-03T06:00:00Z"
             },
             "6": {
-                "mode": "Rainmaker",
-                "map1": "Wahoo World",
-                "map2": "Shipshape Cargo Co.",
-                "start": "2024-03-28T10:00:00Z",
-                "end": "2024-03-28T12:00:00Z"
+                "mode": "Tower Control",
+                "map1": "Hagglefish Market",
+                "map2": "Wahoo World",
+                "start": "2024-04-03T06:00:00Z",
+                "end": "2024-04-03T08:00:00Z"
             },
             "7": {
-                "mode": "Clam Blitz",
+                "mode": "Splat Zones",
                 "map1": "Um'ami Ruins",
-                "map2": "Sturgeon Shipyard",
-                "start": "2024-03-28T12:00:00Z",
-                "end": "2024-03-28T14:00:00Z"
+                "map2": "Manta Maria",
+                "start": "2024-04-03T08:00:00Z",
+                "end": "2024-04-03T10:00:00Z"
             },
             "8": {
-                "mode": "Splat Zones",
+                "mode": "Clam Blitz",
                 "map1": "Barnacle & Dime",
-                "map2": "Mahi-Mahi Resort",
-                "start": "2024-03-28T14:00:00Z",
-                "end": "2024-03-28T16:00:00Z"
+                "map2": "MakoMart",
+                "start": "2024-04-03T10:00:00Z",
+                "end": "2024-04-03T12:00:00Z"
             },
             "9": {
-                "mode": "Tower Control",
-                "map1": "Mincemeat Metalworks",
-                "map2": "Robo ROM-en",
-                "start": "2024-03-28T16:00:00Z",
-                "end": "2024-03-28T18:00:00Z"
+                "mode": "Rainmaker",
+                "map1": "Brinewater Springs",
+                "map2": "Inkblot Art Academy",
+                "start": "2024-04-03T12:00:00Z",
+                "end": "2024-04-03T14:00:00Z"
             },
             "10": {
-                "mode": "Rainmaker",
-                "map1": "Undertow Spillway",
-                "map2": "Bluefin Depot",
-                "start": "2024-03-28T18:00:00Z",
-                "end": "2024-03-28T20:00:00Z"
+                "mode": "Tower Control",
+                "map1": "MakoMart",
+                "map2": "Marlin Airport",
+                "start": "2024-04-03T14:00:00Z",
+                "end": "2024-04-03T16:00:00Z"
             },
             "11": {
-                "mode": "Clam Blitz",
-                "map1": "Um'ami Ruins",
-                "map2": "Crableg Capital",
-                "start": "2024-03-28T20:00:00Z",
-                "end": "2024-03-28T22:00:00Z"
+                "mode": "Splat Zones",
+                "map1": "Eeltail Alley",
+                "map2": "Hammerhead Bridge",
+                "start": "2024-04-03T16:00:00Z",
+                "end": "2024-04-03T18:00:00Z"
             },
             "12": {
-                "mode": "Splat Zones",
-                "map1": "Mincemeat Metalworks",
-                "map2": "Hammerhead Bridge",
-                "start": "2024-03-28T22:00:00Z",
-                "end": "2024-03-29T00:00:00Z"
-            },
-            "13": {
                 "mode": "Clam Blitz",
-                "map1": "Inkblot Art Academy",
-                "map2": "Humpback Pump Track",
-                "start": "2024-03-29T00:00:00Z",
-                "end": "2024-03-29T02:00:00Z"
+                "map1": "Scorch Gorge",
+                "map2": "Um'ami Ruins",
+                "start": "2024-04-03T18:00:00Z",
+                "end": "2024-04-03T20:00:00Z"
             }
         },
         "x": {
             "1": {
-                "mode": "Splat Zones",
-                "map1": "Um'ami Ruins",
-                "map2": "Crableg Capital",
-                "start": "2024-03-28T00:00:00Z",
-                "end": "2024-03-28T02:00:00Z"
-            },
-            "2": {
-                "mode": "Clam Blitz",
-                "map1": "Barnacle & Dime",
-                "map2": "MakoMart",
-                "start": "2024-03-28T02:00:00Z",
-                "end": "2024-03-28T04:00:00Z"
-            },
-            "3": {
-                "mode": "Rainmaker",
-                "map1": "Undertow Spillway",
-                "map2": "Hammerhead Bridge",
-                "start": "2024-03-28T04:00:00Z",
-                "end": "2024-03-28T06:00:00Z"
-            },
-            "4": {
-                "mode": "Tower Control",
-                "map1": "Mincemeat Metalworks",
-                "map2": "Brinewater Springs",
-                "start": "2024-03-28T06:00:00Z",
-                "end": "2024-03-28T08:00:00Z"
-            },
-            "5": {
-                "mode": "Splat Zones",
-                "map1": "Flounder Heights",
-                "map2": "Robo ROM-en",
-                "start": "2024-03-28T08:00:00Z",
-                "end": "2024-03-28T10:00:00Z"
-            },
-            "6": {
-                "mode": "Clam Blitz",
-                "map1": "Hagglefish Market",
-                "map2": "Humpback Pump Track",
-                "start": "2024-03-28T10:00:00Z",
-                "end": "2024-03-28T12:00:00Z"
-            },
-            "7": {
-                "mode": "Rainmaker",
-                "map1": "Museum d'Alfonsino",
-                "map2": "Marlin Airport",
-                "start": "2024-03-28T12:00:00Z",
-                "end": "2024-03-28T14:00:00Z"
-            },
-            "8": {
-                "mode": "Tower Control",
-                "map1": "Scorch Gorge",
-                "map2": "Wahoo World",
-                "start": "2024-03-28T14:00:00Z",
-                "end": "2024-03-28T16:00:00Z"
-            },
-            "9": {
-                "mode": "Splat Zones",
-                "map1": "Sturgeon Shipyard",
-                "map2": "Bluefin Depot",
-                "start": "2024-03-28T16:00:00Z",
-                "end": "2024-03-28T18:00:00Z"
-            },
-            "10": {
                 "mode": "Clam Blitz",
                 "map1": "Hammerhead Bridge",
-                "map2": "Manta Maria",
-                "start": "2024-03-28T18:00:00Z",
-                "end": "2024-03-28T20:00:00Z"
+                "map2": "Bluefin Depot",
+                "start": "2024-04-02T20:00:00Z",
+                "end": "2024-04-02T22:00:00Z"
+            },
+            "2": {
+                "mode": "Tower Control",
+                "map1": "Flounder Heights",
+                "map2": "Wahoo World",
+                "start": "2024-04-02T22:00:00Z",
+                "end": "2024-04-03T00:00:00Z"
+            },
+            "3": {
+                "mode": "Clam Blitz",
+                "map1": "Eeltail Alley",
+                "map2": "Hagglefish Market",
+                "start": "2024-04-03T00:00:00Z",
+                "end": "2024-04-03T02:00:00Z"
+            },
+            "4": {
+                "mode": "Splat Zones",
+                "map1": "Barnacle & Dime",
+                "map2": "Sturgeon Shipyard",
+                "start": "2024-04-03T02:00:00Z",
+                "end": "2024-04-03T04:00:00Z"
+            },
+            "5": {
+                "mode": "Tower Control",
+                "map1": "Mincemeat Metalworks",
+                "map2": "Inkblot Art Academy",
+                "start": "2024-04-03T04:00:00Z",
+                "end": "2024-04-03T06:00:00Z"
+            },
+            "6": {
+                "mode": "Rainmaker",
+                "map1": "Crableg Capital",
+                "map2": "Marlin Airport",
+                "start": "2024-04-03T06:00:00Z",
+                "end": "2024-04-03T08:00:00Z"
+            },
+            "7": {
+                "mode": "Clam Blitz",
+                "map1": "Humpback Pump Track",
+                "map2": "Robo ROM-en",
+                "start": "2024-04-03T08:00:00Z",
+                "end": "2024-04-03T10:00:00Z"
+            },
+            "8": {
+                "mode": "Splat Zones",
+                "map1": "Scorch Gorge",
+                "map2": "Undertow Spillway",
+                "start": "2024-04-03T10:00:00Z",
+                "end": "2024-04-03T12:00:00Z"
+            },
+            "9": {
+                "mode": "Tower Control",
+                "map1": "Museum d'Alfonsino",
+                "map2": "Mahi-Mahi Resort",
+                "start": "2024-04-03T12:00:00Z",
+                "end": "2024-04-03T14:00:00Z"
+            },
+            "10": {
+                "mode": "Rainmaker",
+                "map1": "Hagglefish Market",
+                "map2": "Um'ami Ruins",
+                "start": "2024-04-03T14:00:00Z",
+                "end": "2024-04-03T16:00:00Z"
             },
             "11": {
-                "mode": "Rainmaker",
-                "map1": "Mahi-Mahi Resort",
-                "map2": "Sturgeon Shipyard",
-                "start": "2024-03-28T20:00:00Z",
-                "end": "2024-03-28T22:00:00Z"
+                "mode": "Clam Blitz",
+                "map1": "Museum d'Alfonsino",
+                "map2": "Marlin Airport",
+                "start": "2024-04-03T16:00:00Z",
+                "end": "2024-04-03T18:00:00Z"
             },
             "12": {
-                "mode": "Tower Control",
-                "map1": "Hagglefish Market",
-                "map2": "Marlin Airport",
-                "start": "2024-03-28T22:00:00Z",
-                "end": "2024-03-29T00:00:00Z"
-            },
-            "13": {
-                "mode": "Rainmaker",
-                "map1": "Eeltail Alley",
-                "map2": "Robo ROM-en",
-                "start": "2024-03-29T00:00:00Z",
-                "end": "2024-03-29T02:00:00Z"
+                "mode": "Splat Zones",
+                "map1": "Wahoo World",
+                "map2": "Shipshape Cargo Co.",
+                "start": "2024-04-03T18:00:00Z",
+                "end": "2024-04-03T20:00:00Z"
             }
         }
     },
     "salmon": {
         "1": {
-            "stage": "Bonerattle Arena",
-            "boss": "Horrorboros",
-            "weapon1": "Luna Blaster",
-            "weapon2": "Octobrush",
-            "weapon3": "H-3 Nozzlenose",
-            "weapon4": "Goo Tuber",
-            "start": "2024-03-27T16:00:00Z",
-            "end": "2024-03-29T08:00:00Z"
-        },
-        "2": {
-            "stage": "Jammin' Salmon Junction",
-            "boss": "Megalodontia",
-            "weapon1": "Splattershot",
-            "weapon2": "Big Swig Roller",
-            "weapon3": "Slosher",
-            "weapon4": "Hydra Splatling",
-            "start": "2024-03-29T08:00:00Z",
-            "end": "2024-03-31T00:00:00Z"
-        },
-        "3": {
-            "stage": "Spawning Grounds",
-            "boss": "Cohozuna",
-            "weapon1": "Splattershot Jr.",
-            "weapon2": "Flingza Roller",
-            "weapon3": "Heavy Edit Splatling",
-            "weapon4": "Jet Squelcher",
-            "start": "2024-03-31T00:00:00Z",
-            "end": "2024-04-01T16:00:00Z"
-        },
-        "4": {
             "stage": "Sockeye Station",
             "boss": "Horrorboros",
             "weapon1": "Squeezer",
@@ -414,7 +356,7 @@
             "start": "2024-04-01T16:00:00Z",
             "end": "2024-04-03T08:00:00Z"
         },
-        "5": {
+        "2": {
             "stage": "Marooner's Bay",
             "boss": "Megalodontia",
             "weapon1": "REEF-LUX 450",
@@ -423,6 +365,36 @@
             "weapon4": "Splat Charger",
             "start": "2024-04-03T08:00:00Z",
             "end": "2024-04-05T00:00:00Z"
+        },
+        "3": {
+            "stage": "Salmonid Smokeyard",
+            "boss": "Cohozuna",
+            "weapon1": "Dapple Dualies",
+            "weapon2": "Douser Dualies FF",
+            "weapon3": "Painbrush",
+            "weapon4": "Heavy Splatling",
+            "start": "2024-04-05T00:00:00Z",
+            "end": "2024-04-06T16:00:00Z"
+        },
+        "4": {
+            "stage": "Bonerattle Arena",
+            "boss": "Random",
+            "weapon1": "Random",
+            "weapon2": "Random",
+            "weapon3": "Random",
+            "weapon4": "Random",
+            "start": "2024-04-06T16:00:00Z",
+            "end": "2024-04-08T08:00:00Z"
+        },
+        "5": {
+            "stage": "Gone Fission Hydroplant",
+            "boss": "Horrorboros",
+            "weapon1": "Carbon Roller",
+            "weapon2": "N-ZAP '85",
+            "weapon3": "Sloshing Machine",
+            "weapon4": "Jet Squelcher",
+            "start": "2024-04-08T08:00:00Z",
+            "end": "2024-04-10T00:00:00Z"
         }
     }
 }

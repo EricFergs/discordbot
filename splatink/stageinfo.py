@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 from dateutil import tz
-from datacaching import fetchdata
+from cache.datacaching import fetchdata
 
 
 class splatinfo:
@@ -158,3 +158,4 @@ class salmon_info(splatinfo):
         endTime = salm['endTime']
         cls.time_frame(startTime, endTime)
         word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time}'
+        return word

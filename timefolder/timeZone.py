@@ -1,5 +1,5 @@
 from discord.ext import commands
-import timecalc
+import timefolder.timecalc as timecalc
 
 def setup(bot):
     #basic command, looks for the word link and return send()

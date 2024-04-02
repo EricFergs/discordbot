@@ -1,14 +1,23 @@
 from PIL import Image, ImageDraw, ImageFont
-from maps import matcher
-from mode import modematcher
+from db.maps import matcher
+from db.mode import modematcher
+
+
+#database references
+db = 'db/'
+misc = db + 'misc/background.png'
+maps = db + 'maps/'
+modefile = db + 'mode/'
+font = db + 'fonts/Splatoon1.ttf'
+
 
 def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
     # Load background image
-    background = Image.open('misc/background.png')
+    background = Image.open(misc)
 
     # Load map images
-    map1 = Image.open('maps/' + matcher.map_mapping[Map1])
-    map2 = Image.open('maps/' + matcher.map_mapping[Map2])
+    map1 = Image.open(maps + matcher.map_mapping[Map1])
+    map2 = Image.open(maps + matcher.map_mapping[Map2])
     
 
     # Resize map images
@@ -21,7 +30,7 @@ def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
     background.paste(map2, (0, 320))
 
     if gamemode:
-        gamemode = Image.open('mode/'+ modematcher.mode_mapping[gamemode]).convert("RGBA")
+        gamemode = Image.open(modefile + modematcher.mode_mapping[gamemode]).convert("RGBA")
         background.paste(gamemode,(0,185),mask=gamemode)
     # Create a drawing context
     draw = ImageDraw.Draw(background)
@@ -29,7 +38,7 @@ def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
     # Add mode text
     text = mode
     font_size = 60
-    myFont = ImageFont.truetype('Splatoon1.ttf', font_size)
+    myFont = ImageFont.truetype(font, font_size)
 
     if mode == "Turf war":
         text_color = (144, 238, 144)
@@ -46,7 +55,7 @@ def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
     # Add rotation time text
     text = rotation_time
     font_size = 30
-    myFont = ImageFont.truetype('Splatoon1.ttf', font_size)
+    myFont = ImageFont.truetype(font, font_size)
     text_color = (0, 0, 0)
     font_width = myFont.getsize(text)[0]
     position = (background.width - font_width) / 2

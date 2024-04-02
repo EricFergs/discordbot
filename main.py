@@ -1,8 +1,9 @@
 import settings
 import discord
 import simplecommands
-import timeZone
+from timefolder import timeZone
 from discord.ext import commands
+from splatink import rotationcmds
 
 logger = settings.logging.getLogger("bot")
 
@@ -15,7 +16,7 @@ def run():
         logger.info(f"User: {bot.user} (ID: {bot.user.id})")
     simplecommands.setup(bot)
     timeZone.setup(bot)
-    
+    rotationcmds.setup(bot)
 
     bot.run(settings.DISCORD_API_SECRET, root_logger=True)
 
