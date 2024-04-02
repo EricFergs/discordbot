@@ -70,12 +70,9 @@ def setup(bot):
         await send_rotation_info(ctx)
 
     @bot.command()
-    async def searchmap(ctx, *args):
-        if len(args) == 3:
-            mode = matcher.mode[args[0]]
-            map = matcher.abbreviations[args[1]]
-            gamemode = matcher.gamemodes[args[2]]
-
+    async def searchopen(ctx, *args):
+        if (len(args) == 1):
+            word = args[0]
             rotaton = stageinfo.rotation_info()
             invalid = False
             if (word in matcher.abbreviations):
@@ -105,6 +102,7 @@ def setup(bot):
                 await ctx.send(list_as_string)
         else:
             await ctx.send("Invalid please provide mode, map, and then gamemode")
+
 
     @bot.command()
     async def edit(ctx):
