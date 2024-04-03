@@ -1,7 +1,0 @@
-pip install 
-1.discord (for the bot itself)
-2.requests (make HTTP requests)
-3.json (Getting json data from APIs)
-4.dotenv (to hide the API token)
-5.PIL (to construct the graphic for the map rotations) make sure this is version 9.5.0 to allow for getsize method
-6.python-dateutil (for the time conversions)

@@ -12,8 +12,9 @@ class splatinfo:
 
     @classmethod
     def getdata(cls):
-        return fetchdata(update=False, json_cache=cls.cache, url=cls.url)
-
+        data = fetchdata(update=False, json_cache=cls.cache, url=cls.url)
+        return data
+    
     @classmethod
     def time_frame(cls, start, end):
         utc = tz.tzutc()
