@@ -73,7 +73,7 @@ def setup(bot):
                 gamemode = matcher.gamemodes[word]
                 maplist = rotaton.findmaps("open",gamemode=gamemode)
             else:
-                await ctx.send("Invalid please send map or mode")
+                await ctx.send("Invalid please insert map, mode, or both")
                 invalid = True
             if not invalid:
                 if (len(maplist) == 0):
@@ -82,14 +82,33 @@ def setup(bot):
                     list_as_string = '\n'.join(maplist)
                     await ctx.send(list_as_string)
         elif (len(args) == 2):
-            map = matcher.abbreviations[args[0]]
-            gamemode = matcher.gamemodes[args[1]]
+            word = args[0]
+            word2 = args[1]
+            invalid = False
             rotaton = stageinfo.rotation_info()
-            maplist = rotaton.findmaps("open", map, gamemode)
-            if (len(maplist) == 0):
-                await ctx.send(f'No {gamemode} {map}')
+            if (word in matcher.abbreviations):
+                map = matcher.abbreviations[word]
+                if (word2 in matcher.gamemodes):
+                    gamemode = matcher.gamemodes[word2]
+                    maplist = rotaton.findmaps("open", map=map, gamemode=gamemode)
+                else:
+                    invalid = True
+            elif (word in matcher.gamemodes):
+                gamemode = matcher.gamemodes[word]
+                if(word2 in matcher.abbreviations):
+                    map = matcher.abbreviations[word2]
+                    maplist = rotaton.findmaps("open", map=map, gamemode=gamemode)
+                else:
+                    invalid = True
             else:
-                list_as_string = '\n'.join(maplist)
-                await ctx.send(list_as_string)
+                invalid = True
+            if not invalid:
+                if (len(maplist) == 0):
+                    await ctx.send(f'No {gamemode} {map}')
+                else:
+                    list_as_string = '\n'.join(maplist)
+                    await ctx.send(list_as_string)
+            else: 
+                await ctx.send("Invalid the map or mode has a typo")
         else:
-            await ctx.send("Invalid please provide mode, map, and then gamemode")
+            await ctx.send("Invalid please insert map, mode, or both")
