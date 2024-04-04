@@ -131,15 +131,15 @@ class salmon_info(splatinfo):
     weapon4 = None
 
     def get_salmon(cls):
-        salm = cls.getdata()[
-            'data']['coopGroupingSchedule']['regularSchedules']['nodes'][0]
-        cls.stage1 = salm['setting']['coopStage']['name']
-        cls.weapon1 = salm['setting']['weapons'][0]['name']
-        cls.weapon2 = salm['setting']['weapons'][1]['name']
-        cls.weapon3 = salm['setting']['weapons'][2]['name']
-        cls.weapon4 = salm['setting']['weapons'][3]['name']
-        startTime = salm['startTime']
-        endTime = salm['endTime']
+        salm = cls.getdata()['salmon']['1']
+        cls.stage1 = salm['stage']
+        cls.weapon1 = salm['weapon1']
+        cls.weapon2 = salm['weapon2']
+        cls.weapon3 = salm['weapon3']
+        cls.weapon4 = salm['weapon4']
+        startTime = salm['start']
+        endTime = salm['end']
+        cls.boss = salm['boss']
         cls.time_frame(startTime, endTime)
-        word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time}'
+        word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time} with boss {cls.boss}'
         return word

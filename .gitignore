@@ -1,4 +1,4 @@
 .env
 cache/splatdata.json
 cache/splatink.json
-logs/
+logs/infos.log
