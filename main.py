@@ -14,9 +14,15 @@ def run():
     @bot.event
     async def on_ready():
         logger.info(f"User: {bot.user} (ID: {bot.user.id})")
+        await bot.load_extension("timefolder.timeZone")
     simplecommands.setup(bot)
-    timeZone.setup(bot)
     rotationcmds.setup(bot)
+
+    @bot.command()
+    async def reloadtime(ctx):
+        await bot.unload_extension("timefolder.timeZone")
+        await bot.load_extension("timefolder.timeZone")
+        await ctx.send("File has been reloaded")
 
     bot.run(settings.DISCORD_API_SECRET, root_logger=True)
 

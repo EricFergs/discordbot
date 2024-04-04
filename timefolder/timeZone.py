@@ -1,26 +1,30 @@
 from discord.ext import commands
 import timefolder.timecalc as timecalc
 
-def setup(bot):
-    #basic command, looks for the word link and return send()
-    @bot.command()
-    async def Japan(ctx):
+class TimeZone(commands.Cog):
+    def __init__(self,bot):
+        self.bot = bot
+
+    
+    @commands.command()
+    async def Japan(self,ctx):
         await ctx.send(timecalc.jp)
 
-    @bot.command()
-    async def est(ctx):
+    @commands.command()
+    async def est(self,ctx):
         await ctx.send(timecalc.easternst)
 
-    @bot.command()
-    async def pst(ctx):
+    @commands.command()
+    async def pst(self,ctx):
         await ctx.send(timecalc.pst)
 
-    @bot.command()
-    async def mst(ctx):
+    @commands.command()
+    async def mst(self,ctx):
         await ctx.send(timecalc.mst)
 
-    @bot.command()
-    async def cst(ctx):
+    @commands.command()
+    async def cst(self,ctx):
         await ctx.send(timecalc.cst)
 
-   
+async def setup(bot):
+    await bot.add_cog(TimeZone(bot))
