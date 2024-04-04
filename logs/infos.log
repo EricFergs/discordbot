@@ -1,15 +1,15 @@
-WARNING    - 2024-04-02 14:43:19,304 - client          : PyNaCl is not installed, voice will NOT be supported
-INFO       - 2024-04-02 14:43:19,320 - client          : logging in using static token
-INFO       - 2024-04-02 14:43:26,516 - gateway         : Shard ID None has connected to Gateway (Session ID: fc9eb7e48a0975745a1d32c4736f5d2e).
-ERROR      - 2024-04-02 14:43:28,403 - bot             : Ignoring exception in command salmon
+WARNING    - 2024-04-03 17:05:11,463 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2024-04-03 17:05:11,467 - client          : logging in using static token
+INFO       - 2024-04-03 17:05:12,287 - gateway         : Shard ID None has connected to Gateway (Session ID: 1aa8b104e5602d917ce28d99ff325d2f).
+ERROR      - 2024-04-03 17:05:22,863 - bot             : Ignoring exception in command open
 Traceback (most recent call last):
   File "C:\Users\E\Documents\Personal projects\discordbot\.venv\lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
     ret = await coro(*args, **kwargs)
-  File "C:\Users\E\Documents\Personal projects\discordbot\splatink\rotationcmds.py", line 61, in salmon
-    await ctx.send(rotation.get_salmon())
-  File "C:\Users\E\Documents\Personal projects\discordbot\splatink\stageinfo.py", line 150, in get_salmon
-    salm = cls.getdata()[
-KeyError: 'data'
+  File "C:\Users\E\Documents\Personal projects\discordbot\splatink\rotationcmds.py", line 43, in open
+    rotation.get_anarchyOpen()
+  File "C:\Users\E\Documents\Personal projects\discordbot\splatink\stageinfo.py", line 50, in get_anarchyOpen
+    anarchy = cls.getdata()['regularmatch']['open']['1']
+KeyError: '1'
 
 The above exception was the direct cause of the following exception:
 
@@ -20,4 +20,4 @@ Traceback (most recent call last):
     await injected(*ctx.args, **ctx.kwargs)  # type: ignore
   File "C:\Users\E\Documents\Personal projects\discordbot\.venv\lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
     raise CommandInvokeError(exc) from exc
-discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 'data'
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '1'
