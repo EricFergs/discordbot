@@ -4,6 +4,9 @@ from dateutil import tz
 from cache.datacaching import fetchdata
 
 
+
+
+
 class splatinfo:
     url = 'https://splatoon3.ink/data/schedules.json'
     cache = 'cache/splatdata.json'
@@ -35,56 +38,36 @@ class rotation_info(splatinfo):
     gamemode = None
 
     @classmethod
-    def get_turf(cls):
-        turf = cls.getdata()['regularmatch']['turf']['1']
-        stage1 = turf['map1']
-        stage2 = turf['map2']
-        startTime = turf['start']
-        endTime = turf['end']
+    def get_rotationinfo(cls,rmode):
+        r = cls.getdata()['regularmatch'][rmode]['1']
+        stage1 = r['map1']
+        stage2 = r['map2']
+        startTime = r['start']
+        endTime = r['end']
+        mode = r['mode']
         cls.time_frame(startTime, endTime)
         cls.stage1 = stage1
         cls.stage2 = stage2
+        cls.mode = rmode
+        cls.gamemode = mode
+
+    @classmethod
+    def get_turf(cls):
+        cls.get_rotationinfo('turf')
         cls.mode = "Turf war"
         cls.gamemode = None
 
     def get_anarchyOpen(cls):
-        anarchy = cls.getdata()['regularmatch']['open']['1']
-        stage1 = anarchy['map1']
-        stage2 = anarchy['map2']
-        startTime = anarchy['start']
-        endTime = anarchy['end']
-        mode = anarchy['mode']
-        cls.time_frame(startTime, endTime)
-        cls.stage1 = stage1
-        cls.stage2 = stage2
+        cls.get_rotationinfo('open')
         cls.mode = "Anarchy Open"
-        cls.gamemode = mode
-
+     
     def get_anarchySeries(cls):
-        anarchy = cls.getdata()['regularmatch']['series']['1']
-        stage1 = anarchy['map1']
-        stage2 = anarchy['map2']
-        startTime = anarchy['start']
-        endTime = anarchy['end']
-        mode = anarchy['mode']
-        cls.time_frame(startTime, endTime)
-        cls.stage1 = stage1
-        cls.stage2 = stage2
+        cls.get_rotationinfo('series')
         cls.mode = "Anarchy Series"
-        cls.gamemode = mode
 
     def get_xBattles(cls):
-        x = cls.getdata()['regularmatch']['x']['1']
-        stage1 = x['map1']
-        stage2 = x['map2']
-        startTime = x['start']
-        endTime = x['end']
-        mode = x['mode']
-        cls.time_frame(startTime, endTime)
-        cls.stage1 = stage1
-        cls.stage2 = stage2
-        cls.mode = "X"
-        cls.gamemode = mode
+        cls.get_rotationinfo("x")
+        cls.mode = "X rank"
 
     def modeAndStage(cls, final, allrotation, map, gamemode):
         for rotation in allrotation:
@@ -148,15 +131,15 @@ class salmon_info(splatinfo):
     weapon4 = None
 
     def get_salmon(cls):
-        salm = cls.getdata()[
-            'data']['coopGroupingSchedule']['regularSchedules']['nodes'][0]
-        cls.stage1 = salm['setting']['coopStage']['name']
-        cls.weapon1 = salm['setting']['weapons'][0]['name']
-        cls.weapon2 = salm['setting']['weapons'][1]['name']
-        cls.weapon3 = salm['setting']['weapons'][2]['name']
-        cls.weapon4 = salm['setting']['weapons'][3]['name']
-        startTime = salm['startTime']
-        endTime = salm['endTime']
+        salm = cls.getdata()['salmon']['1']
+        cls.stage1 = salm['stage']
+        cls.weapon1 = salm['weapon1']
+        cls.weapon2 = salm['weapon2']
+        cls.weapon3 = salm['weapon3']
+        cls.weapon4 = salm['weapon4']
+        startTime = salm['start']
+        endTime = salm['end']
+        cls.boss = salm['boss']
         cls.time_frame(startTime, endTime)
-        word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time}'
+        word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time} with boss {cls.boss}'
         return word
