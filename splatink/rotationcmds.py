@@ -5,6 +5,7 @@ import splatink.image_manipulation as image_manipulation
 import os
 from PIL import Image
 from splatink import matcher
+import splatink.editdistance as editdistance
 
 
 def setup(bot):
@@ -65,12 +66,12 @@ def setup(bot):
             word = args[0]
             rotaton = stageinfo.rotation_info()
             invalid = False
-            if (word in matcher.abbreviations):
-                map = matcher.abbreviations[word]
-                maplist = rotaton.findmaps(mode, map=map)
-            elif (word in matcher.gamemodes):
+            if (word in matcher.gamemodes):
                 gamemode = matcher.gamemodes[word]
                 maplist = rotaton.findmaps(mode, gamemode=gamemode)
+            elif (len(editdistance.check_close_maps(word)) != 0):
+                word = matcher.abbreviations[editdistance.check_close_maps(word)[0]]
+                maplist = rotaton.findmaps(mode, map=word)
             else:
                 await ctx.send("Invalid please insert map, mode, or both")
                 invalid = True
@@ -85,8 +86,8 @@ def setup(bot):
             word2 = args[1]
             invalid = False
             rotaton = stageinfo.rotation_info()
-            if (word in matcher.abbreviations):
-                map = matcher.abbreviations[word]
+            if (len(editdistance.check_close_maps(word)) != 0):
+                map = matcher.abbreviations[editdistance.check_close_maps(word)[0]]
                 if (word2 in matcher.gamemodes):
                     gamemode = matcher.gamemodes[word2]
                     maplist = rotaton.findmaps(
@@ -95,8 +96,8 @@ def setup(bot):
                     invalid = True
             elif (word in matcher.gamemodes):
                 gamemode = matcher.gamemodes[word]
-                if (word2 in matcher.abbreviations):
-                    map = matcher.abbreviations[word2]
+                if (len(editdistance.check_close_maps(word2)) != 0):
+                    map = matcher.abbreviations[editdistance.check_close_maps(word2)[0]]
                     maplist = rotaton.findmaps(
                         mode, map=map, gamemode=gamemode)
                 else:
