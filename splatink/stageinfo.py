@@ -141,5 +141,3 @@ class salmon_info(splatinfo):
         endTime = salm['end']
         cls.boss = salm['boss']
         cls.time_frame(startTime, endTime)
-        word = f'The stage is {cls.stage1} and weapons are {cls.weapon1},{cls.weapon2},{cls.weapon3}, and {cls.weapon4} at time {cls.time} with boss {cls.boss}'
-        return word

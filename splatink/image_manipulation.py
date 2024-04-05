@@ -1,14 +1,17 @@
 from PIL import Image, ImageDraw, ImageFont
-from db.maps import matcher
+from db.maps.online_maps import matcher
+from db.maps.salmon_maps import salmatcher
 from db.mode import modematcher
 
 
 #database references
 db = 'db/'
 misc = db + 'misc/background.png'
-maps = db + 'maps/'
+graybg = db + 'misc/graybg.jpg'
+maps = db + 'maps/online_maps/'
 modefile = db + 'mode/'
 font = db + 'fonts/Splatoon1.ttf'
+salmaps = db + 'maps/salmon_maps/'
 
 
 def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
@@ -65,3 +68,18 @@ def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
     background.save("final.png")
 
     return "final.png"
+
+def make_salmon(map, boss, w1, w2, w3, w4, rotation_time):
+    background = Image.open(graybg)
+
+    stage = Image.open(salmaps + salmatcher.salmon_mapping[map])
+    
+    percentage = 80
+    stage = stage.resize((int(stage.width * (percentage / 100)), int(stage.height * (percentage / 100))))
+
+    background.paste(stage, (0, 0))
+
+    background.save("final.png")
+
+    return "final.png"
+
