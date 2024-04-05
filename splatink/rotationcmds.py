@@ -58,7 +58,12 @@ def setup(bot):
     @bot.command()
     async def salmon(ctx):
         rotation = stageinfo.salmon_info()
-        await ctx.send(rotation.get_salmon())
+        rotation.get_salmon()
+        image_map = image_manipulation.make_salmon(
+            rotation.stage1, rotation.boss, rotation.weapon1, rotation.weapon2, rotation.weapon3, rotation.weapon4, rotation.time)
+        await ctx.send(file=discord.File(image_map))
+        os.remove('final.png')
+        
 
     async def searchrotation(ctx, mode, *args):
         if (len(args) == 1):
