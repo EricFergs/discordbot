@@ -30,7 +30,7 @@ def getTurf(cleanData, data):
                 "start": start,
                 "end": end
         }
-        cleanData['regularmatch']['turf'][i] = rotation_data
+        cleanData['regularmatch']['turf'][str(i)] = rotation_data
         i += 1
     return cleanData
 
@@ -51,7 +51,7 @@ def getOpen(cleanData, data):
                 "start": start,
                 "end": end
         }
-        cleanData['regularmatch']['open'][i] = rotation_data
+        cleanData['regularmatch']['open'][str(i)] = rotation_data
         i += 1
     return cleanData
 
@@ -72,7 +72,7 @@ def getSeries(cleanData, data):
                 "start": start,
                 "end": end
         }
-        cleanData['regularmatch']['series'][i] = rotation_data
+        cleanData['regularmatch']['series'][str(i)] = rotation_data
         i += 1
     return cleanData
 
@@ -93,7 +93,7 @@ def getX(cleanData, data):
                 "start": start,
                 "end": end
         }
-        cleanData['regularmatch']['x'][i] = rotation_data
+        cleanData['regularmatch']['x'][str(i)] = rotation_data
         i += 1
     return cleanData
 
