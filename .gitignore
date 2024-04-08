@@ -1,5 +1,5 @@
 .env
 cache/splatdata.json
 cache/splatink.json
-__pycache__/
+*pycache*
 nso-api/

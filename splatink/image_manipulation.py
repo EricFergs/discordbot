@@ -8,10 +8,13 @@ from db.mode import modematcher
 db = 'db/'
 misc = db + 'misc/background.png'
 graybg = db + 'misc/graybg.jpg'
+
 maps = db + 'maps/online_maps/'
+salmaps = db + 'maps/salmon_maps/'
+
 modefile = db + 'mode/'
 font = db + 'fonts/Splatoon1.ttf'
-salmaps = db + 'maps/salmon_maps/'
+
 
 
 def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
