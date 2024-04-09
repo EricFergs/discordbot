@@ -58,15 +58,11 @@ def setup(bot):
 
     @bot.command()
     async def salmon(ctx):
-        rotation1 = stageinfo.salmon_info()
-        rotation2 = stageinfo.salmon_info()
-        rotation3 = stageinfo.salmon_info()
-        
-        rotation1.get_salmon('1')
-        rotation2.get_salmon('2')
-        rotation3.get_salmon('3')
-
-        rotations = {rotation1, rotation2, rotation3}
+        rotations = []
+        for i in range(1, 5):  
+            rotation = stageinfo.salmon_info()
+            rotation.get_salmon(str(i))  
+            rotations.append(rotation)
 
         image_map = image_manipulation.make_salmon(rotations)
         await ctx.send(file=discord.File(image_map))
