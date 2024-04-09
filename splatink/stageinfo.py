@@ -123,21 +123,23 @@ class rotation_info(splatinfo):
 
 
 class salmon_info(splatinfo):
-
+    map = None
     boss = None
     weapon1 = None
     weapon2 = None
     weapon3 = None
     weapon4 = None
+    start = None
 
-    def get_salmon(cls):
-        salm = cls.getdata()['salmon']['1']
-        cls.stage1 = salm['stage']
+    def get_salmon(cls, key):
+        salm = cls.getdata()['salmon'][key]
+        cls.map = salm['stage']
         cls.weapon1 = salm['weapon1']
         cls.weapon2 = salm['weapon2']
         cls.weapon3 = salm['weapon3']
         cls.weapon4 = salm['weapon4']
         startTime = salm['start']
+        cls.start = startTime
         endTime = salm['end']
         cls.boss = salm['boss']
         cls.time_frame(startTime, endTime)
