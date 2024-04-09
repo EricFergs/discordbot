@@ -76,41 +76,44 @@ def make_graphic(Map1, Map2, mode, rotation_time, gamemode = None):
 
     return "final.png"
 
-def make_salmon(map, boss, w1, w2, w3, w4, rotation_time):
+def make_salmon(rotations):
     background = Image.open(graybg)
+    x_offset = 100
+    y_offset = 100
+    
+    for idx, rotation in enumerate(rotations):
+        stage = Image.open(salmaps + salmatcher.salmon_mapping[rotation.map])
+        percentage = 80
+        stage = stage.resize((int(stage.width * (percentage / 100)), int(stage.height * (percentage / 100))))
 
-    stage = Image.open(salmaps + salmatcher.salmon_mapping[map])
-    percentage = 80
-    stage = stage.resize((int(stage.width * (percentage / 100)), int(stage.height * (percentage / 100))))
+        boss = Image.open(bosses + bossmatcher.boss_mapping[rotation.boss])
+        boss = boss.convert("RGBA")
+        boss = boss.resize((boss.width, boss.height), Image.ANTIALIAS)
 
-    boss = Image.open(bosses + bossmatcher.boss_mapping[boss])
-    boss = boss.convert("RGBA")
-    boss = boss.resize((boss.width, boss.height), Image.ANTIALIAS)
+        weapons_images = []
+        for weapon in [rotation.weapon1, rotation.weapon2, rotation.weapon3, rotation.weapon4]:
+            weapon_img = Image.open(weapons + weaponmatcher.weapon_mapping[weapon])
+            weapon_img = weapon_img.convert("RGBA")
+            weapon_img = weapon_img.resize((weapon_img.width, weapon_img.height), Image.ANTIALIAS)
+            weapons_images.append(weapon_img)
 
-    wep1 = Image.open(weapons + weaponmatcher.weapon_mapping[w1])
-    wep1 = wep1.convert("RGBA")
-    wep1 = wep1.resize((wep1.width, wep1.height), Image.ANTIALIAS)
-
-    wep2 = Image.open(weapons + weaponmatcher.weapon_mapping[w2])
-    wep2 = wep2.convert("RGBA")
-    wep2 = wep2.resize((wep2.width, wep2.height), Image.ANTIALIAS)
-
-    wep3 = Image.open(weapons + weaponmatcher.weapon_mapping[w3])
-    wep3 = wep3.convert("RGBA")
-    wep3 = wep3.resize((wep3.width, wep3.height), Image.ANTIALIAS)
-
-    wep4 = Image.open(weapons + weaponmatcher.weapon_mapping[w4])
-    wep4 = wep4.convert("RGBA")
-    wep4 = wep4.resize((wep4.width, wep4.height), Image.ANTIALIAS)
-
-    background.paste(stage, (0, 0))
-    background.paste(boss, (100, 100), boss)
-    background.paste(wep1, (500, 500), wep1)
-    background.paste(wep2, (550, 500), wep2)
-    background.paste(wep3, (600, 500), wep3)
-    background.paste(wep4, (650, 500), wep4)
+        background.paste(stage, (0, idx * stage.height))
+        background.paste(boss, (x_offset, int(y_offset + idx * (stage.height/2))), boss)
+        x_offset += 50  # Adjust x offset for next boss image
+        for weapon_img in weapons_images:
+            background.paste(weapon_img, (x_offset, int(y_offset + idx * (stage.height/2))), weapon_img)
+            x_offset += 50  # Adjust x offset for next weapon image
+        
+        draw = ImageDraw.Draw(background)
+        text = rotation.start
+        font_size = 30
+        myFont = ImageFont.truetype(font, font_size)
+        text_color = (0, 0, 0)
+        font_width = myFont.getsize(text)[0]
+        position = (background.width - font_width) / 2
+        draw.text((position, y_offset + idx * (stage.height/2)), text, fill=text_color, font=myFont)
 
     background.save("final.png")
-
     return "final.png"
+
 

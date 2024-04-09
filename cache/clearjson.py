@@ -110,7 +110,7 @@ def getSalmon(cleanData, data):
             "start": start,
             "end": end
         }
-        cleanData['salmon'][i] = rotation_data
+        cleanData['salmon'][str(i)] = rotation_data
     return cleanData
 
 def filterData(data):
