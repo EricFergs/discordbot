@@ -1,7 +1,7 @@
 weapon_mapping = {
-    "Sploosh-o-matic": "sploosh.png",
+    "Sploosh-o-matic": "vsploosh.png",
     "Splattershot Jr.": "jr.png",
-    "Splash-o-matic": "splash.png",
+    "Splash-o-matic": "vsplash.png",
     "Custom Splattershot Jr.": "cjr.png",
     "Neo Sploosh-o-matic": "neosploosh.png",
     "Neo Splash-o-matic": "neosplash.png",

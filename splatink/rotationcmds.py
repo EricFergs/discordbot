@@ -67,6 +67,12 @@ def setup(bot):
         image_map = image_manipulation.make_salmon(rotations)
         await ctx.send(file=discord.File(image_map))
         os.remove('final.png')
+    
+    @bot.command()
+    async def gear(ctx):
+        gear = stageinfo.gear_info()
+        gear.get_gear()
+        
         
 
     async def searchrotation(ctx, mode, *args):
