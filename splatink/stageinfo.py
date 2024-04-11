@@ -14,8 +14,10 @@ class splatinfo:
     stage1 = None
 
     @classmethod
-    def getdata(cls):
-        data = fetchdata(update=False, json_cache=cls.cache, url=cls.url)
+    def getdata(cls, customURL = None):
+        url = customURL if customURL else cls.url
+        print(url)
+        data = fetchdata(update=False, json_cache=cls.cache, url=url)
         return data
     
     @classmethod
@@ -143,3 +145,10 @@ class salmon_info(splatinfo):
         endTime = salm['end']
         cls.boss = salm['boss']
         cls.time_frame(startTime, endTime)
+
+class gear_info(splatinfo):
+    gearpieces = []
+    gearurl = 'https://splatoon3.ink/data/gear.json'
+
+    def get_gear(cls):
+        ger = cls.getdata('https://splatoon3.ink/data/gear.json')
