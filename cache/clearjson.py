@@ -111,6 +111,31 @@ def getSalmon(cleanData, data):
             "end": end
         }
         cleanData['salmon'][str(i)] = rotation_data
+    
+    try:
+        exists = cleanData['salmon'][4]
+    except (KeyError, IndexError, TypeError):
+        bigRun = data['data']['coopGroupingSchedule']['bigRunSchedules']['nodes'][0]
+        stage = bigRun['setting']['coopStage']['name']
+        boss = bigRun['setting']['boss']['name']
+        weapon1 = bigRun['setting']['weapons'][0]['name']
+        weapon2 = bigRun['setting']['weapons'][1]['name']
+        weapon3 = bigRun['setting']['weapons'][2]['name']
+        weapon4 = bigRun['setting']['weapons'][3]['name']
+        start = bigRun['startTime']
+        end = bigRun['endTime']
+        bigRunData = {
+            "stage": stage,
+            "boss": boss,
+            "weapon1": weapon1,
+            "weapon2": weapon2,
+            "weapon3": weapon3,
+            "weapon4": weapon4,
+            "start": start,
+            "end": end
+        }
+        cleanData['salmon']['4'] = bigRunData
+
     return cleanData
 
 def filterData(data):
@@ -120,8 +145,11 @@ def filterData(data):
     cleanData = getSeries(cleanData, data)
     cleanData = getX(cleanData, data)
     cleanData = getSalmon(cleanData, data)
-    return cleanData
 
+    try:
+        exists = cleanData['salmon'][4]
+    except (KeyError, IndexError, TypeError):
+        print ("This works!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 if __name__ == "__main__":
     with open('cache/splatink.json', 'r') as file:
