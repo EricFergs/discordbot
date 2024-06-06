@@ -64,6 +64,8 @@ weapon_mapping = {
     "Recycled Brella 24 Mk I": "recycbrella.png",
     "Tri-Stringer": "vbow.png",
     "REEF-LUX 450": "reeflux.png",
+    "Wellstring V": "wellstr.png",
     "Splatana Stamper": "vstamp.png",
     "Splatana Wiper": "vwiper.png",
+    "Mint Decavitator": "decav.png"
 }
