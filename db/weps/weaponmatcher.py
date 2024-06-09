@@ -66,4 +66,5 @@ weapon_mapping = {
     "REEF-LUX 450": "reeflux.png",
     "Splatana Stamper": "vstamp.png",
     "Splatana Wiper": "vwiper.png",
+    "Random":"random.png",
 }
