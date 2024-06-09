@@ -5,5 +5,6 @@ salmon_mapping = {
     "Spawning Grounds": "spawning.png",
     "Salmonid Smokeyard": "smokeyard.png",
     "Marooner's Bay": "marooner.png",
-    "Sockeye Station": "sockeye.png"
+    "Sockeye Station": "sockeye.png",
+    "Multiple Sites": "multisite.png"
 }
