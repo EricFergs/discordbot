@@ -145,11 +145,8 @@ def filterData(data):
     cleanData = getSeries(cleanData, data)
     cleanData = getX(cleanData, data)
     cleanData = getSalmon(cleanData, data)
-
-    try:
-        exists = cleanData['salmon'][4]
-    except (KeyError, IndexError, TypeError):
-        print ("This works!!!!!!!!!!!!!!!!!!!!!!!!!")
+    
+    return cleanData
 
 if __name__ == "__main__":
     with open('cache/splatink.json', 'r') as file:

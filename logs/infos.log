@@ -1,17 +1,18 @@
-WARNING    - 2024-06-05 18:05:18,738 - client          : PyNaCl is not installed, voice will NOT be supported
-INFO       - 2024-06-05 18:05:18,740 - client          : logging in using static token
-INFO       - 2024-06-05 18:05:19,179 - gateway         : Shard ID None has connected to Gateway (Session ID: 91a5151a5700bd25ac5a0c7d20e2d30d).
-ERROR      - 2024-06-05 18:05:25,389 - bot             : Ignoring exception in command salmon
+WARNING    - 2024-06-05 21:28:51,553 - client          : PyNaCl is not installed, voice will NOT be supported
+INFO       - 2024-06-05 21:28:51,555 - client          : logging in using static token
+INFO       - 2024-06-05 21:28:52,125 - gateway         : Shard ID None has connected to Gateway (Session ID: 2d1d16f7c940ccbdf400d3b9dd2037c1).
+ERROR      - 2024-06-05 21:29:04,421 - bot             : Ignoring exception in command salmon
 Traceback (most recent call last):
   File "c:\Users\josep\Documents\GitHub\discordbot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
     ret = await coro(*args, **kwargs)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\josep\Documents\GitHub\discordbot\splatink\rotationcmds.py", line 64, in salmon
-    rotation.get_salmon(str(i))
-  File "C:\Users\josep\Documents\GitHub\discordbot\splatink\stageinfo.py", line 137, in get_salmon
-    salm = cls.getdata()['salmon'][key]
-           ~~~~~~~~~~~~~^^^^^^^^^^
-TypeError: 'NoneType' object is not subscriptable
+  File "C:\Users\josep\Documents\GitHub\discordbot\splatink\rotationcmds.py", line 67, in salmon
+    image_map = image_manipulation.make_salmon(rotations)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josep\Documents\GitHub\discordbot\splatink\image_manipulation.py", line 84, in make_salmon
+    stage = Image.open(salmaps + salmatcher.salmon_mapping[rotation.map])
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'Multiple Sites'
 
 The above exception was the direct cause of the following exception:
 
@@ -23,4 +24,4 @@ Traceback (most recent call last):
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "c:\Users\josep\Documents\GitHub\discordbot\.venv\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
     raise CommandInvokeError(exc) from exc
-discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'NoneType' object is not subscriptable
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 'Multiple Sites'
