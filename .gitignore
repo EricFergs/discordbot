@@ -3,3 +3,4 @@ cache/splatdata.json
 cache/splatink.json
 *pycache*
 nso-api/
+logs/infos.log
