@@ -113,7 +113,7 @@ def getSalmon(cleanData, data):
         cleanData['salmon'][str(i)] = rotation_data
     
     try:
-        exists = cleanData['salmon'][4]
+        exists = data['data']['coopGroupingSchedule']['regularSchedules']['nodes'][4]
     except (KeyError, IndexError, TypeError):
         bigRun = data['data']['coopGroupingSchedule']['bigRunSchedules']['nodes'][0]
         stage = bigRun['setting']['coopStage']['name']
