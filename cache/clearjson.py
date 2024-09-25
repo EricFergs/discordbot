@@ -114,28 +114,29 @@ def getSalmon(cleanData, data):
     
     try:
         exists = cleanData['salmon'][4]
+        if exists:
+            bigRun = data['data']['coopGroupingSchedule']['bigRunSchedules']['nodes'][0]
+            stage = bigRun['setting']['coopStage']['name']
+            boss = bigRun['setting']['boss']['name']
+            weapon1 = bigRun['setting']['weapons'][0]['name']
+            weapon2 = bigRun['setting']['weapons'][1]['name']
+            weapon3 = bigRun['setting']['weapons'][2]['name']
+            weapon4 = bigRun['setting']['weapons'][3]['name']
+            start = bigRun['startTime']
+            end = bigRun['endTime']
+            bigRunData = {
+                "stage": stage,
+                "boss": boss,
+                "weapon1": weapon1,
+                "weapon2": weapon2,
+                "weapon3": weapon3,
+                "weapon4": weapon4,
+                "start": start,
+                "end": end
+            }
+            cleanData['salmon']['4'] = bigRunData   
     except (KeyError, IndexError, TypeError):
-        bigRun = data['data']['coopGroupingSchedule']['bigRunSchedules']['nodes'][0]
-        stage = bigRun['setting']['coopStage']['name']
-        boss = bigRun['setting']['boss']['name']
-        weapon1 = bigRun['setting']['weapons'][0]['name']
-        weapon2 = bigRun['setting']['weapons'][1]['name']
-        weapon3 = bigRun['setting']['weapons'][2]['name']
-        weapon4 = bigRun['setting']['weapons'][3]['name']
-        start = bigRun['startTime']
-        end = bigRun['endTime']
-        bigRunData = {
-            "stage": stage,
-            "boss": boss,
-            "weapon1": weapon1,
-            "weapon2": weapon2,
-            "weapon3": weapon3,
-            "weapon4": weapon4,
-            "start": start,
-            "end": end
-        }
-        cleanData['salmon']['4'] = bigRunData
-
+       print("Big Run doesn't exist")
     return cleanData
 
 def filterData(data):

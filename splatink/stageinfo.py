@@ -16,7 +16,6 @@ class splatinfo:
     @classmethod
     def getdata(cls, customURL = None):
         url = customURL if customURL else cls.url
-        print(url)
         data = fetchdata(update=False, json_cache=cls.cache, url=url)
         return data
     
