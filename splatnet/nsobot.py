@@ -9,7 +9,7 @@ class SubmitToken(ui.Modal, title='Submit Token'):
     link = ui.TextInput(label='For instruction type /tokenhelp', style=discord.TextStyle.paragraph)
 
     async def on_submit(self, interaction: discord.Interaction):
-        await interaction.response.send_message(f'Thanks for your response, {interaction.user}!', ephemeral=True)
+        await interaction.response.send_message(f'Your token has been submitted, {interaction.user}! \nUse /tokenreset to remove it from the database.', ephemeral=True)
         print(interaction.data['components'][0]['components'][0]['value'])
 
 class retrieveToken(discord.Embed):
@@ -25,10 +25,11 @@ class tokenButton(View):
     def __init__(self):
         super().__init__()
         self.add_item(Button(label="Redirect to Nintendo", style=discord.ButtonStyle.link, row = 0, url="https://accounts.nintendo.com/connect/1.0.0/authorize?state=q-wo3V4G5MhlqGPUsGGl-hYyByJXxKwWP5JgQFAppfYgI85H&redirect_uri=npf71b963c1b7b6d119%3A%2F%2Fauth&client_id=71b963c1b7b6d119&scope=openid+user+user.birthday+user.mii+user.screenName&response_type=session_token_code&session_token_code_challenge=dfMKebv-Khg1gZhQgIt7VY-Rhr73tJ3F6Lt6d-r7qGM&session_token_code_challenge_method=S256&theme=login_form"))
-        #self.add_item(Button(label="Submit Token", style=discord.ButtonStyle.secondary,custom_id="submit_token"))
+        submit_button = Button(label="Submit Token", style=discord.ButtonStyle.secondary,custom_id="submit_token")
+        submit_button.callback = self.submit_button
+        self.add_item(submit_button)
     
-    @discord.ui.button(label="Submit Token", style=discord.ButtonStyle.secondary, custom_id="submit_token")
-    async def submit_button(self, interaction: discord.Interaction,button: Button,):
+    async def submit_button(self, interaction: discord.Interaction):
         await interaction.response.send_modal(SubmitToken())
         
 def setup(bot):
