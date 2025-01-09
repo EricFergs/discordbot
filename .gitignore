@@ -4,3 +4,5 @@ cache/splatink.json
 *pycache*
 nso-api/
 logs/infos.log
+splatnet/nso_global_data.json
+splatnet/nso_tokens.json

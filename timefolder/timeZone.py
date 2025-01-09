@@ -9,7 +9,7 @@ class TimeZone(commands.Cog):
     @commands.command()
     async def japan(self,ctx):
         await ctx.send(timecalc.jp)
-
+        
     @commands.command()
     async def est(self,ctx):
         await ctx.send(timecalc.easternst)
