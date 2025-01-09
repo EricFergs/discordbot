@@ -1,6 +1,6 @@
 .env
 
-logs/infos.logs
+logs/infos.log
 
 splatnet/nso_global_data.json
 
