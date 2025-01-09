@@ -30,7 +30,7 @@ class MyBot(commands.Bot):
         self.tree.copy_global_to(guild=GUILD_ID)
         await self.tree.sync(guild=GUILD_ID)
         
-        self.log_synced_commands()
+        #self.log_synced_commands()
 
         await self.load_extension("timefolder.timeZone")
         simplecommands.setup(self)

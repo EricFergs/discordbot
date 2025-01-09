@@ -11,7 +11,13 @@ class SubmitToken(ui.Modal, title='Submit Token'):
         await interaction.response.send_message(f'Thanks for your response, {interaction.user}!', ephemeral=True)
         print(interaction.data['components'][0]['components'][0]['value'])
 
-
+class retrieveToken(discord.Embed):
+    def __init__(self):
+        super().__init__()
+        self.title = "Connecting to splatnet"
+        self.description = "Please visit this link and provide the token"
+        self.colour = discord.Colour(0x81d8d0)
+        
 def setup(bot):
     @bot.command()
     async def getid(ctx):
@@ -32,4 +38,7 @@ def setup(bot):
 
         await interaction.response.send_modal(SubmitToken())
 
+    @bot.tree.command(name ="token", description="Retrieve user token")
+    async def token(interaction):
+        await interaction.response.send_message(ephemeral = True, embed = retrieveToken())
    
