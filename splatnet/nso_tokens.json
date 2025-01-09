@@ -1,0 +1,50 @@
+{
+    "session_token": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsInR5cCI6InNlc3Npb25fdG9rZW4iLCJqdGkiOjE1OTI2MDg0MjAzLCJpYXQiOjE3MjczMDg4NTcsImF1ZCI6IjcxYjk2M2MxYjdiNmQxMTkiLCJzdWIiOiIzNWY5NThiZWE2ZTBmOTI1Iiwic3Q6c2NwIjpbMCw4LDksMTcsMjNdLCJleHAiOjE3OTAzODA4NTd9.Izvz3QpyRLC86bXjIWBEeUI83_qUTSgF3G6XTn7mwvI",
+    "api_tokens": {
+        "value": {
+            "access_token": "eyJraWQiOiJjNjE5OTVhNC03Yzk2LTRkZjYtYjJlMS1mYjhhZTY0OGE0MTEiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYWNjb3VudHMubmludGVuZG8uY29tLzEuMC4wL2NlcnRpZmljYXRlcyJ9.eyJhdWQiOiI3MWI5NjNjMWI3YjZkMTE5IiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5uaW50ZW5kby5jb20iLCJhYzpncnQiOjY0LCJqdGkiOiI5ODc4ZDc0Ny1lODI4LTRlMTQtYTE4YS1lM2FjNTZkYmI1MGQiLCJ0eXAiOiJ0b2tlbiIsInN1YiI6IjM1Zjk1OGJlYTZlMGY5MjUiLCJleHAiOjE3MjczMDk3NTgsImlhdCI6MTcyNzMwODg1OCwiYWM6c2NwIjpbMCw4LDksMTcsMjNdfQ.T290ctCVmgSAU19u7Ka4ZuxLT78Lq4y49UhIFWUROTQVHSfns1DVb6wXCn-jXlzsKn-q8UQaGV7P2xC7MakopUxgBvY-XoN0OP-dNleSPskak_82_0c1GXhAYG4XixF-ykaNqhSObw9-rQfjsGt5t0oGWv58ixfhCOmCXMnK6As6w9Vt-zz1H71L6dthOwJ6Fw2MjalFBZ0TNHdvvGDAfswR93Tg47GsK_hKBvbHzKrnOtyKCpQ9yLN7ggjLHO9Nuzy3fUB9u2qCTCSsjRDlUrQCzLnCW8OohTZ_nekeNeLHKrb3qBZH3Br6kWTIuQNMSDbWjSZswMiZyUWSmwQ2KQ",
+            "token_type": "Bearer",
+            "scope": [
+                "openid",
+                "user",
+                "user.birthday",
+                "user.mii",
+                "user.screenName"
+            ],
+            "expires_in": 900,
+            "id_token": "eyJraWQiOiJlZGFhYmJjOC05ODZlLTQ4NWItYWJlMS1kZDNlM2VmMWUzN2EiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYWNjb3VudHMubmludGVuZG8uY29tLzEuMC4wL2NlcnRpZmljYXRlcyJ9.eyJ0eXAiOiJpZF90b2tlbiIsInN1YiI6IjM1Zjk1OGJlYTZlMGY5MjUiLCJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsImNvdW50cnkiOiJVUyIsImp0aSI6IjgwNmYzOGUyLTQyNzctNGQ5Zi1iNjNkLTc5YjFhNzBlNjVmMSIsImF0X2hhc2giOiI1dk1LWWpveEJIWVZVNW9IN21OZ0pBIiwiYXVkIjoiNzFiOTYzYzFiN2I2ZDExOSIsImlhdCI6MTcyNzMwODg1OCwiZXhwIjoxNzI3MzA5NzU4fQ.FdZhZcza3CcE6mPkXYYJh9wYgkQiV0C42eBs9nXoIWHziNyitWEOoXk7y8n1Lqq_hwFr50NyUcAdxV13He2DP4dcUsjxFX6KV4jTlCIP8MOpf3Iy3cvpAuU2nplCAZrAMyfef7aedKkxUuyAbRVvbu8t-yxcZZ_cS_I7wlaiiWF3QJxnS7Lyb5bWvJv7hcGxdhIG9mlAPAatzD9D2145WcC5SN7QX9f5VhuIY6m8Fi48Wrq002_-Skc82CsgmxLkqSFRMZB7L1k7a4CuoildzO3GsOToWgb6ZIUREQD4ZPToAaOjglHqYTrfGO8BxywMhChlW1DvaEF0k-P40mmoJg"
+        },
+        "createtime": 1727308859,
+        "duration": 900
+    },
+    "api_login": {
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE3MjczMTYwNjEsImlhdCI6MTcyNzMwODg2MSwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NTA3NDE0MDU0MDY5ODYyNCwidHlwIjoiaWRfdG9rZW4ifQ.CvmlNv6ufcId186PUPOfwCwWvx7IYW4bobhb7r1qAVw",
+        "createtime": 1727308862,
+        "duration": 7200
+    },
+    "games": {
+        "s2": {
+            "web_service_token": {
+                "value": "eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldC92MS9XZWJTZXJ2aWNlL0NlcnRpZmljYXRlL0xpc3QiLCJraWQiOiJFUElhTlZwOWZtZ0I0YmFvbWxsdTdWdHBnWkUiLCJ0eXAiOiJKV1QifQ.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsImF1ZCI6IjV2bzJpMmtteng2cHMxbDF2anNqZ25qczk5eW16Y3cwIiwiZXhwIjoxNzI3MzE5NjY0LCJpYXQiOjE3MjczMDg4NjQsImlzcyI6ImFwaS1scDEuem5jLnNydi5uaW50ZW5kby5uZXQiLCJqdGkiOiI3ZDkzOTZmZC01YjE3LTQ1NDktYjViYi00MzEzNDdkNzhiMzQiLCJzdWIiOjUwNzQxNDA1NDA2OTg2MjQsImxpbmtzIjp7Im5ldHdvcmtTZXJ2aWNlQWNjb3VudCI6eyJpZCI6ImQ3YjQyNGEyNjFjNzQ4YzIifX0sInR5cCI6ImlkX3Rva2VuIiwibWVtYmVyc2hpcCI6eyJhY3RpdmUiOnRydWV9fQ.w73sncjZZhBrYEAYcdYzMcNw6Op2dGRrP-AlNQo-3mo5xOKLE3WyrwFHGIOsVGQ-KxQZHry23J47Ga4U64jhAq4HNJk6znUWJdEkn1Lj9FIulpyTeQDqqmN3dh7fl5uXkJqvccAvc2HvAwjTzjaF2PSHvN2SccfJ_RYNbn-pjexVCVnKKIRsP7gvHZlBdMZ3STyNylvEbC8z6qsva24wqh-evnuyuk8E1v7W-m2Eu3oWsmp_R0q_qdpgSS4F4zfsxviymXUor4TotcKbEm1ZyH890RbZnScO9XZ23MKF3qctGhaa9s_VYfutAJWgxSF4p4UKuNd-ekYDTM6xM0h3lg",
+                "createtime": 1727308865,
+                "duration": 10800
+            },
+            "iksm_session_token": {
+                "value": "5873d0c1fa84b2106bc401c56796845d8ac920a3",
+                "createtime": 1727308866,
+                "duration": 86399
+            },
+            "x-unique-id": "10976961146061840878"
+        },
+        "s3": {
+            "web_service_token": null,
+            "bullet_token": null
+        },
+        "acnh": {
+            "web_service_token": null,
+            "g_token": null,
+            "park_session": null,
+            "ac_bearer": null
+        }
+    }
+}
