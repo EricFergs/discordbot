@@ -4,13 +4,12 @@ import discord
 import nso_api
 
 
-class Questionnaire(ui.Modal, title='Questionnaire Response'):
-    name = ui.TextInput(label='Name')
-    answer = ui.TextInput(label='Answer', style=discord.TextStyle.paragraph)
+class SubmitToken(ui.Modal, title='Submit Token'):
+    link = ui.TextInput(label='For instruction type /tokenhelp', style=discord.TextStyle.paragraph)
 
     async def on_submit(self, interaction: discord.Interaction):
-        await interaction.response.send_message(f'Thanks for your response, {self.name}!', ephemeral=True)
-        print(interaction.data)
+        await interaction.response.send_message(f'Thanks for your response, {interaction.user}!', ephemeral=True)
+        print(interaction.data['components'][0]['components'][0]['value'])
 
 
 def setup(bot):
@@ -31,6 +30,6 @@ def setup(bot):
     @bot.tree.command(name="modal", description="testing Modal")
     async def modal_test(interaction: discord.Interaction):
 
-        await interaction.response.send_modal(Questionnaire())
+        await interaction.response.send_modal(SubmitToken())
 
    
